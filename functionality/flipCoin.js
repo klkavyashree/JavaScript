@@ -8,5 +8,5 @@
 var util= require('../UtilPrgms/Utility');
 
 var read=require('readline-sync');//scan for input
-var count=read.question("enter number of times to flip the coin");//getting user input
-util.flipCoin(count);//calling flipCoin function from utility file
+var count=read.questionInt("enter number of times to flip the coin");//getting user input
+console.log(util.flipCoin(count));//calling flipCoin function from utility file
