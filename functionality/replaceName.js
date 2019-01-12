@@ -8,11 +8,10 @@
  
  * */
 var util= require('../UtilPrgms/Utility');//importing function from util
-var flag=true;
-while(true)
-{}
+
 var read=require('readline-sync');//scan for input
-var name=read.question("enter ur name");//getting user input
+var name=read.question("enter the name ");//getting user input
 var username=util.validateName(name);
-var res=util.replace(username);
+var res=util.StringReplace(username);
+
 console.log(res);

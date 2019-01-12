@@ -6,6 +6,6 @@
  * */
 var util=require('../UtilPrgms/Utility');
 var read = require('readline-sync');
-var n = read.questionInt("enter the value ");
-var res=util.PrimeFactor(n);
+var n = read.questionInt("value which u need to check for prime");
+var res=util.FindPrimeFactor(n);
 console.log(res);

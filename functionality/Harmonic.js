@@ -7,6 +7,6 @@
 var util = require('../UtilPrgms/Utility');
 
 var read=require('readline-sync');    //scan for input
-var n=read.questionInt("enter n value");           //getting value frm user and assighning it to n
-var res=util.harmonics(n);              //calling function from util 
+var n=read.questionInt("enter Nth harmonic value which u need to find");           //getting value frm user and assighning it to n
+var res=util.FindHarmonics(n);              //calling function from util 
 console.log(res);

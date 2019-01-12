@@ -1,26 +1,12 @@
  module.exports={
-validateName(name)
-    {
-    var flag=true;
-    while(flag)
-    {
-        
-        if(name.length>2)
-        {
-            flag=false;
-        }
-        else{
-            console.log("enter atleast 3 char");
-        }
-    }
-    },
+
     
      /*
     *@purpose : To get user input value 
     *@description : we can call this method whenever we want take input from user
                     and can return the string by replacing username.
     */
- replace(UserName)        //function to replace username with user input
+ StringReplace(UserName)        //function to replace username with user input
 {
     if(UserName.length>=3 && isNaN(UserName))        //if the user given input is greater than 3 char controlflow will enter the loop
     {
@@ -44,7 +30,7 @@ validateName(name)
      * @function: coin flip takes the no of times to flip coin and print the percentage of
      *            head and tail
      */
-flipCoin(count)
+FlipCoin(count)
 {
     
     var j;            //intialising j value
@@ -74,7 +60,7 @@ flipCoin(count)
      */
 
 
-LeapYear(year)
+IsLeapYear(year)
 {
     
         if(year>999 && year<10000 )  //year should be of 4 digit
@@ -99,7 +85,7 @@ LeapYear(year)
      * @description : take input from the user and  print the values till 2^n 
      * @function: using math pow function find the pow of 2 values
      */
-pow2(n)     //pow2 function
+PowerOf2(n)     //pow2 function
 {
     var i; 
     if(i>=0 && i<32) 
@@ -121,7 +107,7 @@ else
      * @description : take input from the user as n value and get the harmonics as output
      * @function: by using for loop add the each harmonic value till the user input
      */
-harmonics(n)    //function harmonic
+FindHarmonics(n)    //function harmonic
 {
     var sum=0;          // intialing variable
     if(n!=0)                //if n value is greater than 0
@@ -144,16 +130,16 @@ harmonics(n)    //function harmonic
      * @function: checking for all the values which are less than n 
      * whether the given value will completely divide or not
      */
-CheckPrime(n)
+CheckPrime(n)           //check prime function
 {
     for(let i=2;i<=n/2;i++)
     {
-        if(n%i==0)
+        if(n%i==0)          //if n value is completely divide by integer number it is not prime
         {
             return false;
         }
     }
-    return true;
+    return true;                //the given number is prime
 },
 
 /*
@@ -162,21 +148,143 @@ CheckPrime(n)
      * @description : take input from the user as n value and generate prime factors for given value 
      * @function: generating the prime values for the given input
      */
-PrimeFactor(n)
+FindPrimeFactor(num)              //function to generate prime factors
 {
-    for(let i=2;i<n/2;i++)
+    var arr=[];
+    var i;
+    for(i=2;i<=num;i++)
     {
-        if(n%i==0)
+        while(num%i==0)
         {
-          if(this.CheckPrime(i)) 
-          {
-              console.log(i);
-          }
-          else
-          n=i; 
+            arr.push(i);
+            num=num/i;
         }
     }
-}
+    return arr;
+},
+
+
+/*
+ * @purpose : to check weather the person playing will win or loose
+ * @parm : user inputs
+     * @description : take input from the user and play till the person playing win or loss
+     * and print the result
+     * @function: check and print wheather the person will win or loss
+     */
+
+Gambler(stake,goal,play)    //gambler function
+     {
+         win=0,loss=0;           //initialising values
+           for(let i=0;i<play;i++)      
+           {
+               while(play>0 && stake>0 && goal>stake)   //checking for the valid numbers
+               {
+                   if(Math.random()>0.5)        //getting random value
+                   {
+                       stake++;          //incrementing satake value
+                       win++;              //incrementing win value
+                       play--;              //  decrementing play value
+                   }
+                   else
+                   {
+                       stake--;        // decrementing stack value
+                       loss++;          //incrementing play value
+                       play--;
+                   }
+
+               }
+           }
+           var total=win+loss;
+           var winp=(win/total)*100;
+           var lossp=(loss/total)*100;
+           console.log("win percentage "+winp);         //printing to the console
+           console.log("loss percentage "+lossp);       //printing to the console
+           console.log("number of of win "+win);        //printing to the console
+           
+     },
+
+    /*
+     * @purpose : count the random number need to provide coupans to the user
+     * @parm : user inputs
+     * @description : take N distinct Coupon Numbers from the user and count how many random numbers 
+     * need to generate distinct coupon number. 
+     * @function:count total random number needed to have all distinct numbers.
+     */
+CoupanCount(n)
+    {
+        var arr=[];
+        var count=0;
+        while(arr.length!=n)
+        {
+        var j=Math.round(Math.random()*n);
+        count++;
+            if(!arr.includes(j))
+            {
+                arr.push(j);
+            }
+        }
+        console.log(arr);
+        return count;
+        
+    },
+
+    /*
+     * @purpose : print 2 dimensional array
+     * @parm : user inputs
+     * @description : take input from user and print the 2 dimensional array
+     * @function : print 2D array
+     */
+    Print2DArray(m,n,arr)
+    {
+        var arr1=[];
+        var count=0;
+        var dis=require('util');
+        for(let i=0;i<m;i++)
+        {
+            arr1.push([]);
+            for(let j=0;j<n;j++)
+            {
+                var x=arr[count];
+                arr1[i][j].push(x);
+                count++;
+            }
+
+          
+        }
+        console.log(arr1);        
+    },
+
+
+    /*
+     * @purpose : find the distinct 3 values which gives sum equal to zero
+     * @parm : user inputs
+     * @description : take input array from the user and find which distinct value give sum equal to zero 
+     * @function : add 3 different digits which gives sum equal to zero.
+     */
+    CheckSumEqualToZero(arr)
+    {
+        var arr1=[];
+        var count=0;
+        for(let i=0;i<arr.length;i++)
+        {
+            for(let j=i+1;j<arr.length;j++)
+            {
+                for(let k=j+1;k<arr.length;k++)
+                {
+                    if((arr[i]+arr[j]+arr[k])==0)
+                    {
+                       console.log(arr[i]+" "+arr[j]+" "+arr[k]); 
+                        count++;
+                    }
+                }
+            }
+        }
+        
+        console.log(count);
+    },
+
+     
+
 
 }
 

@@ -8,4 +8,4 @@ var util= require('../UtilPrgms/Utility');
 
 var read=require('readline-sync');//scan for input
 var year=read.questionInt("enter year should be of 4 digits");//getting user input
-console.log(util.LeapYear(year));//calling Leapyear function from utility file
+console.log(util.IsLeapYear(year));//calling Leapyear function from utility file
