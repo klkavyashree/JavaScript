@@ -1,19 +1,18 @@
 /************************************************************
- * Execution    :   1. cmd> node Harmonic.js
+ * Execution    :   1. cmd> node PermutationString.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Harmonicram.js
+ *                  2. cmd> nodemon Permutation.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Get the nth Harmonic number.
+ * Purpose      :   To get the distance of a point from the origin.
  * 
  * @description
  * 
- * @file        :   Harmonic.js
- * @overview    :   Get the Harmonic number of all the values till nth number,
- *                  and get the sum of it.
+ * @file        :   PermutationString.js
+ * @overview    :   Uses to find all the permutation of the given string
  * @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
  * @version     :   1.0
- * @since       :   12-01-2019
+ * @since       :   14-01-2019
  * 
  * **********************************************************/        
 
@@ -24,6 +23,5 @@
 var util = require('../UtilPrgms/Utility');
 
 var read=require('readline-sync');    //scan for input
-var n=read.questionInt("enter Nth harmonic value which u need to find");           //getting value frm user and assighning it to n
-var res=util.findHarmonics(n);              //calling function from util 
-console.log(res);
+var n=read.question("enter String which u need to find permutation");    //getting string frm user and assighning it to nutil.FindPermutationOfString(n);              //calling function from util 
+util.findPermutationOfString(n);
