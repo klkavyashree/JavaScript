@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node BinarySearchforStrings.js
+ * Execution    :   1. cmd> node SortFileWords.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon BinarySearchforStrings.js
+ *                  2. cmd> nodemon SortFileWords.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   search for the value usingbinary search method
+ * Purpose      :   sort words using insertion sort algorithm and read words from files.
  * 
  * @description
  * 
- * @file        :   BinarySearchforStringst.js
- * @overview    :   search for the binary value.
+ * @file        :   SortFileWords.js
+ * @overview    :   sorting of words in ascending order.
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>
  * @version     :   1.0
  * @since       :   16-01-2019
@@ -23,14 +23,7 @@
 const util=require('../UtilPrgms/Utility');
 
 const read=require('readline-sync');
-var arrayLength=read.questionInt("enter the arraylength ");
-var binaryarray=[];
-for(let index=0;index<arrayLength;index++)
-{   
-var value=read.question("enter the array value ");
-binaryarray.push(value);
-}
-console.log(binaryarray);
-var key=read.question("enter the string to be check")
-var ans=util.binaryString(binaryarray,key);
-console.log(ans);
+var fileName=read.question("enter file name");
+var wordArray=util.callfile(fileName);
+wordArray=util.insertionsort(wordArray);
+console.log(wordArray);

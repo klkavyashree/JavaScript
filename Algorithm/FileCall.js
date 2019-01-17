@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node BinarySearchforStrings.js
+ * Execution    :   1. cmd> node FileCall.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon BinarySearchforStrings.js
+ *                  2. cmd> nodemon FileCall.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   search for the value usingbinary search method
+ * Purpose      :   search for the word usingbinary search method by reading word list from the file
  * 
  * @description
  * 
- * @file        :   BinarySearchforStringst.js
- * @overview    :   search for the binary value.
+ * @file        :   FileCall.js
+ * @overview    :   search for the word using binary search.
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>
  * @version     :   1.0
  * @since       :   16-01-2019
@@ -23,14 +23,10 @@
 const util=require('../UtilPrgms/Utility');
 
 const read=require('readline-sync');
-var arrayLength=read.questionInt("enter the arraylength ");
-var binaryarray=[];
-for(let index=0;index<arrayLength;index++)
-{   
-var value=read.question("enter the array value ");
-binaryarray.push(value);
-}
-console.log(binaryarray);
-var key=read.question("enter the string to be check")
-var ans=util.binaryString(binaryarray,key);
+
+var wordArray=util.callfile();
+wordArray=util.bubblesort(wordArray);
+
+key=read.question("enter the word u need to search");
+var ans=util.binarySearch(wordArray,key);
 console.log(ans);

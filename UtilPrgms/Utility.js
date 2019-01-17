@@ -114,7 +114,7 @@ module.exports = {
 
     /*
      * @purpose : to generate Nth harmonics value to the user input 
-     * @parm : user input
+     * @param : taking user input as n
          * @description : take input from the user as n value and get the harmonics as output
          * @function: by using for loop add the each harmonic value till the user input
          */
@@ -135,7 +135,7 @@ module.exports = {
 
     /*
      * @purpose : check weather the given input is prime number
-     * @parm : user input
+     * @param : take number from user to find prime or not
          * @description : take input from the user as n value and check weather the i/p is prime or not
          * @function: checking for all the values which are less than n 
          * whether the given value will completely divide or not
@@ -153,7 +153,7 @@ module.exports = {
 
     /*
      * @purpose : to generate prime factors of the given value 
-     * @parm : user input
+     * @param :num as user input 
          * @description : take input from the user as n value and generate prime factors for given value 
          * @function: generating the prime values for the given input
          */
@@ -173,7 +173,7 @@ module.exports = {
 
     /*
      * @purpose : to check weather the person playing will win or loose
-     * @parm : user inputs
+     * @param : take stake goal and number of paly as input from user
          * @description : take input from the user and play till the person playing win or loss
          * and print the result
          * @function: check and print wheather the person will win or loss
@@ -204,13 +204,13 @@ module.exports = {
         var lossp = (loss / total) * 100;
         console.log("win percentage " + winp);         //printing to the console
         console.log("loss percentage " + lossp);       //printing to the console
-        console.log("number of of win " + win);        //printing to the console
+        console.log("number of win " + win);        //printing to the console
 
     },
 
     /*
      * @purpose : count the random number need to provide coupans to the user
-     * @parm : user inputs
+     * @param : user inputs how many coupan he needs
      * @description : take N distinct Coupon Numbers from the user and count how many random numbers 
      * need to generate distinct coupon number. 
      * @function:count total random number needed to have all distinct numbers.
@@ -220,7 +220,7 @@ module.exports = {
         var count = 0;
         while (arr.length != n)//if the array length is not equal to given number then enter the loop
         {
-            var randomValue = Math.round(Math.random() * 10000);//math.random will give the random value
+            var randomValue = Math.round(Math.random() * 100000);//math.random will give the random value
             count++;
             if (!arr.includes(randomValue))//if the array doesnot contain that element then 
             {
@@ -234,16 +234,16 @@ module.exports = {
 
     /*
      * @purpose : print 2 dimensional array
-     * @parm : user inputs
+     * @param : user inputs how many  rows ad colomns of array he need
      * @description : take input from user and print the 2 dimensional array
      * @function : print 2D array
      */
     print2DArray(row, column) {
-        var arr1 = [];
+        var arr1 = [];      //initialising array
         console.log("enter the elements of the array");
         for (let index1 = 0; index1 < row; index1++) {
             arr1.push([]);
-            for (let index2 = 0; index2 < column; index2++) {
+            for (let index2 = 0; index2 < column; index2++) {  //looping over till reach column value 
                 var read = require('readline-sync');//reading value from user
                 arr1[index1][index2] = read.questionInt("enter the elements of the array");//inserting value into the array
             }
@@ -253,12 +253,12 @@ module.exports = {
     printArray(arr) {
 
         for (let index = 0; index < arr.length; index++) {
-            var array = [];
+            var array = [];           //initialising array       
             for (let index1 = 0; index1 < arr.length; index1++) {
-                p[index1] = arr[index][index1];           //
+                p[index1] = arr[index][index1];           //passing value into two dimensional array
 
             }
-            console.log(array);
+            console.log(array);      //printing array
         }
 
     },
@@ -276,32 +276,32 @@ module.exports = {
         for (let index = 0; index < arr.length; index++) {
             for (let index1 = index + 1; index1 < arr.length; index1++) {
                 for (let index2 = index1 + 1; index2 < arr.length; index2++) {
-                    if ((arr[index] + arr[index1] + arr[index2]) == 0) {
-                        console.log(arr[index] + " " + arr[index1] + " " + arr[index2]);
-                        count++;
+                    if ((arr[index] + arr[index1] + arr[index2]) == 0) {  //if the 3 distict elements are zeroenter loop
+                        console.log(arr[index] + " " + arr[index1] + " " + arr[index2]);//printing value to console
+                        count++;            //increment count
                     }
                 }
             }
         }
 
-        console.log(count);
+        console.log(count);//printing into console
     },
 
     /*
      * @purpose : To find a distance from the origin point
-     * @parm : user inputs
+     * @param : user inputs
      * @description : take input from user from where to find the distance 
      * @function : by using pow function calculate the distance.
      */
 
     findDistance(x, y) {
-        var distance = Math.sqrt(x * x + y * y);
-        return distance;
+        var distance = Math.sqrt(x * x + y * y);//by using formula find distance
+        return distance;//returning distance
     },
 
     /*
    * @purpose : To find permutation of the string
-   * @parm : user input
+   * @param : user inputs string 
    * @description : take input from user and find the generate all permutation of the string
    * @function : find all possible permutation without repetation
    */
@@ -328,8 +328,8 @@ module.exports = {
          * @description : create object of date and get time in secounds 
          */
     getCurrentTime: function () {
-        var date = new Date();
-        var sec = date.getSeconds();
+        var date = new Date();//creating new obj of date 
+        var sec = date.getSeconds();//get current second
         return sec;
     },
     /*
@@ -339,20 +339,20 @@ module.exports = {
     * @description : create date object and get time in secounds
     */
     elapsedTime: function (start, stop) {
-        var elapsed = (stop - start);
+        var elapsed = (stop - start);//calculating elapsed time
         return elapsed;
     },
     /*
    * @purpose : To find elapsed time b/w the 2 timings
-   * @parm : start when execution start
-   * @parm : stop when execution stop
+   * @param : start when execution start
+   * @param : stop when execution stop
    * @description : get start and stop time and print elapsed time b/w those.
    */
     stopWatch(read) {
         var startTime = read.questionInt("press 1 to enter get start time")
         {
-            if (startTime === 1) {
-                var start = this.getCurrentTime();
+            if (startTime === 1) {//if input is 1 enter the loop
+                var start = this.getCurrentTime();//assighning returned value ito variable
                 stopTime = read.questionInt("press 0 to stoptime")
                 {
                     if (stopTime === 0) {
@@ -372,7 +372,7 @@ module.exports = {
 
     /*
     * @purpose : To find roots of the quadratic equation
-    * @parm : user inputs
+    * @param : user inputs as a b c
     * @description : By taking 3 inputs from user find the 2 roots of the equation can be found using a formula 
        delta = b*b - 4*a*c
        Root 1 of x = (-b + sqrt(delta))/(2*a)
@@ -382,18 +382,18 @@ module.exports = {
     findRoot(a, b, c) {
         var delta = ((b * b) - (4 * a * c));
         // delta=Math.abs(delta);
-        if (delta > 0) {
-            var Root1 = ((-b + Math.sqrt(delta)) / (2 * a));
-            var Root2 = ((-b - Math.sqrt(delta)) / (2 * a));
+        if (delta > 0) {                //if delta is greater than 0
+            var Root1 = ((-b + Math.sqrt(delta)) / (2 * a));//using formula calculate root
+            var Root2 = ((-b - Math.sqrt(delta)) / (2 * a));//using formula calculate root
             console.log(Root1);
             console.log(Root2);
         }
-        else if (delta == 0) {
+        else if (delta == 0) {          //if delta is less than zero
             var Root1 = (-b / (2 * a));
             console.log(Root1);
         }
         else {
-            var Root1 = -b / (2 * a);
+            var Root1 = -b / (2 * a);//if delta is less than zero it leads to imaginary valus
             var Root2 = (Math.sqrt(Math.abs(delta))) / 2 * a;
             console.log("Root1 value is" + Root1 + " i " + Root2);
             console.log("Root2 value is" + Root1 + " -i " + Root2);
@@ -438,21 +438,21 @@ module.exports = {
 
     },
     isAnagram(string1, string2) {
-        string1=string1+"";
-        string2=string2+"";
+        string1 = string1 + "";
+        string2 = string2 + "";
         if (string1.length != string2.length) {
             return false;
         }
         var arr = [];
         for (let index = 0; index < 36; index++) {
             arr[index] = 0;
-    
+
         }
         for (let index = 0; index < string1.length; index++) {
             var ch = string1.charAt(index);
             if (ch >= 'a' && ch <= 'z') {
                 var code = ch.charCodeAt(0);
-    
+
                 arr[code - 97]++;
             } else if (ch >= 'A' && ch <= 'Z') {
                 var code = ch.charCodeAt(0);
@@ -464,7 +464,7 @@ module.exports = {
             ch = string2.charAt(index);
             if (ch >= 'a' && ch <= 'z') {
                 var code = ch.charCodeAt(0);
-    
+
                 arr[code - 97]--;
             } else if (ch >= 'A' && ch <= 'Z') {
                 var code = ch.charCodeAt(0);
@@ -473,8 +473,8 @@ module.exports = {
                 var code = ch.charCodeAt(0);
                 arr[code - 22]--;
             }
-    
-    
+
+
         }
         for (let index = 0; index < 36; index++) {
             if (arr[index] != 0) {
@@ -483,68 +483,55 @@ module.exports = {
         }
         return true;
     },
-    
-   
-    
-   
-    isPalimdrome(string1) 
-    {
+
+
+
+
+    isPalimdrome(string1) {
         var str = "";
-        for (let index = 0; index < string1.length; index++) 
-        {
+        for (let index = 0; index < string1.length; index++) {
             str = string1.charAt(index) + str;
         }
-        if (str == string1)
-        {
+        if (str == string1) {
             return true;
         }
         return false;
     },
-    
-    isPalimdrome2String(num1,num2)
-    {
-        var str="";
-        num1=num1+"";
-        num2=num2+"";
-    
-        for (let i = 0; i < num1.length; i++) 
-        {
-            str=num1.charAt(i)+str;
+
+    isPalimdrome2String(num1, num2) {
+        var str = "";
+        num1 = num1 + "";
+        num2 = num2 + "";
+
+        for (let i = 0; i < num1.length; i++) {
+            str = num1.charAt(i) + str;
         }
-        if(str==num2)
-        {
+        if (str == num2) {
             return true;
         }
         return false;
     },
-    
-    isAnagramPalimdrome() 
-    {
-        var arr=[];
-        for (let index = 0; index < 1000; index++) 
-        {
-            if (this.checkPrime(index)) 
-            {
+
+    isAnagramPalimdrome() {
+        var arr = [];
+        for (let index = 0; index < 1000; index++) {
+            if (this.checkPrime(index)) {
                 arr.push(index);
             }
-    
+
         }
-        
-        for (let i = 0; i < arr.length; i++) 
-        {
-            for (let j = i+1; j < arr.length; j++) 
-            {
-                if(this.isAnagram(arr[i],arr[j]))
-                {
-                    if(this.isPalimdrome2String(arr[i],arr[j]))
-                    {
-                        console.log(arr[i],"  ",arr[j]);
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (this.isAnagram(arr[i], arr[j])) {
+                    if (this.isPalimdrome2String(arr[i], arr[j])) {
+                        console.log(arr[i], "  ", arr[j]);
                     }
                 }
             }
         }
     },
-    
+
     /*
      * @purpose : To sort the string using bubblesort
      * @parm : user string inputs 
@@ -565,7 +552,7 @@ module.exports = {
     },
     /*
      * @purpose : To sort the string using insertionsort
-     * @parm : user string inputs 
+     * @param : user string inputs 
      * @description : sort all the value in ascending order
      * 
      */
@@ -594,6 +581,278 @@ module.exports = {
         return array;
     },
 
+    binarySearch(res, ele) {
+        var mid;
+        var high = res.length - 1;
+        var low = 0;
+        while (high >= low) {
+            mid = Math.floor(low + (high - low) / 2);   // calculate mid value     
+            if (res[mid] == ele) {           // check mid with ele
+                return mid;
+            }
+
+            if (res[mid] > ele) {      //check mid with ele 
+
+                high = mid - 1;             //assign decremented mid to high 
+            }
+            else {
+                low = mid + 1;
+            }
+        }
+        return -1;          // if not found return -1
+    },
+    binaryString(res, ele) {
+        var mid;
+        var high = res.length - 1;
+        var low = 0;
+
+        while (low <= high) {
+            mid = Math.floor(low + (high - low) / 2);// calculate mid value 
+            if (res[mid] == ele) {
+
+                return "yes";
+            }
+            else if (res[mid] > ele) {          //check mid with ele 
+                high = mid - 1;              //assign decremented mid to high 
+            }
+            else {
+                low = mid + 1;              //assign inremented mid to low
+            }
+        }
+        return "no";              // if not found return -1
+    },
+
+    //@purpose:to read file 
+    //@desc:whenever user wabt to read file we can read file using this function
+    callfile(fileName) {
+        var fileStream = require('fs');
+        var f = fileStream.readFileSync(fileName, 'utf8');//reading file
+
+        var arr = f.split(' ');//splitting words of the file
+
+        return arr;
+    },
+    /*
+     * @purpose : to find assumed value
+     * @param : user inputs range and give input yes or no 
+     * @description : assume the input that the user thinking of and ask range weather he has that number within that range
+     * 
+     */
+
+    findNumber(low, high, read) {
+
+        var mid = (low + Math.floor((high - low) / 2));
+        console.log(mid);
+        if (low < high) {
+            var c;
+            if (low == high - 1) {
+                c = read.question("is the assumed value is " + low + "if yes press y or else n")
+                if (c == 'y') {
+                    return low;
+                }
+                if (c == 'n') {
+
+                    return high;
+                }
+
+            }
+
+            c = read.question("is the number is in b/w " + low + " " + mid + "if yes press y or else n");
+            if (c == 'y') {
+                mid = this.findNumber(low, mid, read)
+            }
+            if (c == 'n') {
+                mid = this.findNumber(mid + 1, high, read)
+            }
+
+        }
+        return mid;
+    },
+
+    vendingMachine(amount, i, notes) {
+        var arr = [1000, 500, 100, 50, 10, 5, 2, 1];
+        if (amount == 0 && i == arr.length) {
+            console.log("Total number of notes ", notes);
+            return;
+        }
+        if (Math.floor(amount / arr[i]) > 0) {
+            console.log(arr[i] + " notes is " + Math.floor(amount / arr[i]));
+            notes = notes + Math.floor(amount / arr[i]);
+            amount = amount % arr[i];
+            this.vendingMachine(amount, i + 1, notes);
+            return;
+        }
+        this.vendingMachine(amount, i + 1, notes);
+    },
+
+    /*
+        *@purpose : to find day falls on the given user input date format
+        *@param   : day-take date from command line of user choice 
+        *           month-take month from command line of user choice
+        *           year- take year from command line of user choice
+        *@description : use formula and calculate the day 
+        */
+    dayOfWeek(day, month, year) {
+        console.log("ghf")
+        var y0 = year - Math.floor((14 - month) / 12);
+        console.log("dddhg")
+        var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+        console.log("giuuytthg")
+        var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+        console.log("ghhghg")
+        var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+        console.log(d0);
+        return d0;
+
+
+    },
+    /*
+      *@purpose: convert the celsius to fahrenheit and vice versa of user choice conversion
+      *@param  : number-user choice 
+      *@description: ask users wish, weather to celsius to fahrenheit or fahrenheit to celsius 
+      *and convert according to his wish and prints the results.
+      */
+    convertTemperature(number, read) {
+        //ensuring user value 
+        if (number == 1) {
+            //ask user to enter the celsius value 
+            var num = read.question("Enter your celsius value :");
+            //convert into fahrenheit using formaula
+            var res = (num * (9 / 5) + 32);
+            console.log("The converted value is ", res);
+        }
+        //ensuring user value
+        else if (number == 2) {
+            //ask user to enter the fahrenheit value 
+            var num1 = read.question("Enter your fahrenheit value :");
+            //convert into celsius using formaula
+            var res1 = (num1 - 32) * (5 / 9);
+            console.log("The converted value is ", res1);
+        }
+        else {
+            console.log("Invalid key ")
+        }
+    },
+
+    /*
+       *@purpose: to find the monthly-payment and prints the results 
+       *@param  : principle-principle value from commandline
+       *          year-year value from command line
+       *          rate- rate value from command line
+       *@description : take command line input of principle and year and rate 
+       *and find the monthly payment 
+       */
+    findPayment(principle, year, rate) {
+        //formula to calculate the result
+        var R = rate / (12 * 100);
+        var n = 12 * year;
+        var rs = Math.pow((1 + R), (-n));
+        var calculation = (principle * R) / (1 - (rs));
+        console.log("The monthly payment " + calculation);
+    },
+    /*
+           *@purpose :to find square root for non negative number by using the newton method 
+           *@param : num-user input value
+           *@description :take value from the user and calculate the square of that number 
+           *and prints the result.
+           */
+    findSqrt(num) {
+        if (num > 0) {
+            //formula 
+            var t = num;
+            var epsilon = 1e-15;
+            while (Math.abs(t - num / t) > epsilon * t) {
+                t = (num / t + t) / 2;
+            }
+            console.log("Squre root of non negative number is : ", t)
+        }
+        else {
+            console.log("Number should be positive ");
+        }
+    },
+
+    convertToBinary(num)
+    {
+        var rem;
+        var string="";
+        while(num>0)
+        {
+            rem = num%2;
+            num=Math.floor(num/2);
+            string=rem+string;
+            
+        }
+        while(string.length<8)
+        {
+            string="0"+string;
+        }
+       
+        return string;
+
+
+    },
+
+    
+    
+    /*
+    *@purpose:to convert the binary value to the decimal 
+    *@param  : res-binary value 
+    *@description :convert binary value into the decimal value and return the result
+    */
+    binaryToDecimal(binValue) {
+      var mid=binValue.length/2;
+     var sum=0;
+     var count=0;
+     var count1=0;
+     var string="";
+
+       
+        for(let index=mid;index<binValue.length;index++)
+        {
+           string=string+binValue[index]
+           console.log("in 2st loop"+string)
+        }
+        for(let index=0;index<mid;index++)
+        {
+           string=string+binValue[index]
+           console.log("in 1st loop"+string)
+        }
+        for(let index=0;index<string.length;index++)
+        {
+                if(string[index]=='1')
+                {
+                    count1++;
+                }
+        }
+       
+        for(index=string.length-1;index>=0;index--)
+        {
+            console.log(string[index])
+            if(string[index]=='1')
+            {
+             sum=(sum+Math.pow(2,count)*1)
+             console.log(sum);
+            }
+            count++;
+        }
+
+            console.log("the decimal val is"+sum)
+            if(count1==1)
+            {
+                console.log("swapped number is even")
+            }
+            else
+            {
+                console.log("swapped number is odd")
+            }
+    },
+
+    
+
+
+
+
+
 
 
 
@@ -601,6 +860,12 @@ module.exports = {
 
 
 }
+
+
+
+
+
+
 
 
 

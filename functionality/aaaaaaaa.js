@@ -1,4 +1,4 @@
-var s=121;
+var s="kavya";
 var string="";
 string=string+s;
 string=string.split("").sort();
