@@ -632,6 +632,13 @@ module.exports = {
 
         return arr;
     },
+
+    writefile(filename, data) {
+        var fs = require('fs')
+        fs.writeFile(filename, data, function (err) {
+            if (err) throw err;
+        });
+    },
     /*
      * @purpose : to find assumed value
      * @param : user inputs range and give input yes or no 
@@ -771,83 +778,72 @@ module.exports = {
         }
     },
 
-    convertToBinary(num)
-    {
+    convertToBinary(num) {
         var rem;
-        var string="";
-        while(num>0)
-        {
-            rem = num%2;
-            num=Math.floor(num/2);
-            string=rem+string;
-            
+        var string = "";
+        while (num > 0) {
+            rem = num % 2;
+            num = Math.floor(num / 2);
+            string = rem + string;
+
         }
-        while(string.length<8)
-        {
-            string="0"+string;
+        while (string.length < 8) {
+            string = "0" + string;
         }
-       
+
         return string;
 
 
     },
 
-    
-    
+
+
     /*
     *@purpose:to convert the binary value to the decimal 
     *@param  : res-binary value 
     *@description :convert binary value into the decimal value and return the result
     */
     binaryToDecimal(binValue) {
-      var mid=binValue.length/2;
-     var sum=0;
-     var count=0;
-     var count1=0;
-     var string="";
+        var mid = binValue.length / 2;
+        var sum = 0;
+        var count = 0;
+        var count1 = 0;
+        var string = "";
 
-       
-        for(let index=mid;index<binValue.length;index++)
-        {
-           string=string+binValue[index]
-           console.log("in 2st loop"+string)
+
+        for (let index = mid; index < binValue.length; index++) {
+            string = string + binValue[index]
+            // console.log("in 2st loop"+string)
         }
-        for(let index=0;index<mid;index++)
-        {
-           string=string+binValue[index]
-           console.log("in 1st loop"+string)
+        for (let index = 0; index < mid; index++) {
+            string = string + binValue[index]
+            console.log("in 1st loop" + string)
         }
-        for(let index=0;index<string.length;index++)
-        {
-                if(string[index]=='1')
-                {
-                    count1++;
-                }
+        for (let index = 0; index < string.length; index++) {
+            if (string[index] == '1') {
+                count1++;
+            }
         }
-       
-        for(index=string.length-1;index>=0;index--)
-        {
+
+        for (index = string.length - 1; index >= 0; index--) {
             console.log(string[index])
-            if(string[index]=='1')
-            {
-             sum=(sum+Math.pow(2,count)*1)
-             console.log(sum);
+            if (string[index] == '1') {
+                sum = (sum + Math.pow(2, count) * 1)
+                console.log(sum);
             }
             count++;
         }
 
-            console.log("the decimal val is"+sum)
-            if(count1==1)
-            {
-                console.log("swapped number is even")
-            }
-            else
-            {
-                console.log("swapped number is odd")
-            }
+        console.log("the decimal val is" + sum)
+        if (count1 == 1) {
+            console.log("swapped number is even")
+        }
+        else {
+            console.log("swapped number is odd")
+        }
     },
 
-    
+
 
 
 
