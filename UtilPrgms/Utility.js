@@ -851,12 +851,184 @@ module.exports = {
             console.log("swapped number is odd")
         }
     },
+    /*
+*@purpose : sort the array using the merge sort technique  
+*@param   : res-array
+*@description : take array,divide into two halves,and sort the elements for both right and left halves 
+*/
+mergeSort(res) {
+    var n = res.length;
+    //if size is less than 2 return that.
+    if (n < 2) {
+        return;
+    }
+    //cal mid value 
+    var mid = Math.floor(n / 2);
+    var left = [mid];
+    var right = [n - mid];
+   //store  elements in left array which are present before the mid   
+    for (let i = 0; i < mid; i++) {
+        left[i] = res[i];
+    }
+    //store  elements in left array which are present before the mid  
+    for (let j = mid; j < n; j++) {
+        right[j - mid] = res[j];
+    }
+    //call mergesort for left halve 
+    this.mergeSort(left);
+     //call mergesort for left halve 
+    this.mergeSort(right);
+    this.merge(left, right, res);
 
+},
 
-
-
-
-
+merge(arr, brr, crr) {
+    var i = 0; var j = 0;
+    var k = 0;
+    //merge elements into crr[]
+    while (i < arr.length && j < brr.length) {
+        if (arr[i] <= brr[j]) {
+            crr[k] = arr[i]
+            i++;
+        }
+        else {
+            crr[k] = brr[j];
+            j++;
+        }
+        k++;
+    }
+    // if arr[] is greater than brr[], push all arr[] into crr[]
+    while (i < arr.length) {
+        crr[k] = arr[i];
+        i++;
+        k++;
+    }
+     // if arr[] is lesser than brr[], push all brr[] into crr[]
+    while (j < brr.length) {
+        crr[k] = brr[j];
+        j++;
+        k++;
+    }
+    return crr;
+},
+intializeGame() {
+    var game = [];
+    for (let i = 0; i <= 2; i++) {
+        game.push([]);
+        for (let j = 0; j <= 2; j++)
+            game[i][j] = '-';
+    }
+    return game;
+},
+/**
+ * @description Generate random number between 0 to 2.
+ * 
+ * @returns 0,1,or2.
+ */
+random() {
+    var value = Math.floor(Math.random() * 3);
+    console.log(value);
+    return value;
+},
+/**
+ * @description To mark in the specified location.
+ * 
+ * @param {Array} game 
+ * @param {number} x 
+ * @param {number} y 
+ * @param {Letter} value 
+ * 
+ * @returns Array with mark updated.
+ */
+mark(game, x, y, value) {
+    if (game[x][y] == '-')
+        game[x][y] = value;
+    for (let i = 0; i <= 2; i++) {
+        var print = [];
+        for (let j = 0; j <= 2; j++)
+            print[j] = game[i][j];
+        console.log(print);
+    }
+    return game;
+}
+,
+/**
+ * @description Computer uses random number to mark the play.
+ * 
+ * @param {Array} game 
+ * 
+ * @returns Array with mark updated.
+ */
+computerPlayer(game) {
+    var arr;
+    var flag = false;
+    while (flag == false) {
+        var x = this.random();
+        var y = this.random();
+        if (game[x][y] == '-') {
+            arr = this.mark(game, x, y, 'O');
+            flag = true;
+        }
+    }
+    return game;
+}
+,
+/**
+* @description Player choose number to mark the play.
+* 
+* @param {Array} game 
+* 
+* @returns Array with mark updated.
+*/
+userPlayer(game,readline) {
+    var flag = false;
+    while (flag == false) {
+        console.log("Enter the row value:");
+        let x = readline.questionInt('Enter the value of x within 0,1,2');
+        let y = readline.questionInt('Enter the value of y within 0,1,2');
+        if (game[x][y] == '-') {
+            this.mark(game, x, y, 'X');
+            flag = true;
+        }
+        else
+            console.log("Please enter the correct choice");
+    }
+    return game;
+}
+,
+/**
+ * @description To check wheather any of the below pattern is matched to declare the winner.
+ * 
+ * @param {Array} game 
+ * 
+ * @returns boolean Yes->Any matches   N0->If no matches.
+ */
+check(game) {
+    for (let i = 0; i <= 2; i++) {
+        if (game[i][0] == game[i][1] && game[i][1] == game[i][2]) {
+            if (game[i][0] == 'O' || game[i][0] == 'X') {
+                return true;
+            }
+        }
+        if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) {
+            if (game[0][i] == 'O' || game[0][i] == 'X') {
+                return true;
+            }
+        }
+    }
+    var k = 0, l = 0;
+    if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) {
+        if (game[0][0] == 'O' || game[0][0] == 'X') {
+            return true;
+        }
+    }
+    if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) {
+        if (game[0][0] == 'O' || game[0][0] == 'X') {
+            return true;
+        }
+    }
+    return false;
+},
 
 
 

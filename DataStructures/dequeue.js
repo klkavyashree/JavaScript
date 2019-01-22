@@ -25,11 +25,11 @@ const readline = require('readline-sync');
  */
 var util = require('../UtilPrgms/DSUtility');
 function check() {
-    var deque = new util.Deque;
+    var deque = new util.Deque;//creating deque object
     var answer = readline.question("Enter the string  ");
     var result = deque.PalindromeChecker(answer);
     if (result == false) {
-        console.log("String is not a Palindrome ");
+        console.log("String is not a Palindrome ");//printing to the console
     }
     else {
         console.log("String is palindrome  ");

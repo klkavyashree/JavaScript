@@ -1,9 +1,19 @@
-var arr=[[1],[2]]
+var arr=[["1:"],["2:"]]
 
-var ref=require('util')
-var i=0,j=0;
-arr[i][1]=2;
-//arr[i][2]=3
-//ref.print(arr[i][j])
+data=[1,2,3,4];
+
+for(let i=0;i<data.length;i++)
+{
+    var j=1;
+    var rem=data[i]%2;
+    
+    while(arr[rem][j]!=undefined)
+    {
+        j++
+    }
+    arr[rem][j]=data[i];
+   
+
+}
 console.log(arr)
-console.log(arr.lastIndexOf(1))
+

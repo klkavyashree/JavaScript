@@ -38,14 +38,14 @@ function Stack()
     
        if(ch=='(' || ch=='[' || ch=='{')
        {
-       stack.push(ch);
+       stack.push(ch);//push ch to the stack
        stack.peek();
 
        }
        else{
            switch (ch)
            {
-               case ')' : if(stack.pop()!='('){
+               case ')' : if(stack.pop()!='('){//if the pop is not equal to the char then return false hence it is unbalnced
                                 return false;
                             }
                             break;
@@ -63,7 +63,7 @@ function Stack()
 
 
    }
-   if(stack.isEmpty()){
+   if(stack.isEmpty()){//if the char is false return true
    return true;
    }
    return false;

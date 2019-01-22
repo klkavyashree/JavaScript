@@ -29,17 +29,17 @@ var ll = require('../UtilPrgms/DSUtility');
  */
 var util = require('../UtilPrgms/Utility');
 try {
-    var linklist=new ll.LinkedList();
+    var linklist=new ll.LinkedList();//creating linklist object
     var fileName=read.question("enter filename")
     let datas = util.callfile(fileName);
-    var data=util.bubblesort(datas);
+    var data=util.bubblesort(datas);//calling bubblesort function
     console.log(datas)
     for(let index=0;index<data.length;index++)
         linklist.add(data[index]);
     var display = linklist.display();
     console.log(display);
     let name = read.question("Enter the name you want to search");
-    var check = linklist.search(name);
+    var check = linklist.search(name);//calling searching function
     console.log(check);
     if(check){
         linklist.remove(name);
@@ -47,9 +47,9 @@ try {
     else{
         linklist.addToPos(name);
     }
-    var display = linklist.display();
+    var display = linklist.display();//display the elemets using linklist implementation
     console.log(display);
-    util.writefile(fileName,display)
+    util.writefile(fileName,display)//writting into the file
 } catch (err) { 
   console.error(err);
 }

@@ -30,7 +30,7 @@ var ll = require('../UtilPrgms/DSUtility');
  */
 var util = require('../UtilPrgms/Utility');
 try {
-    var linklist=new ll.LinkedList();
+    var linklist=new ll.LinkedList();//creating list object
     var fileName=read.question("enter filename")
     let data = util.callfile(fileName);
     for(let index=0;index<data.length;index++)
@@ -46,7 +46,7 @@ try {
     else{
         linklist.add(name);
     }
-    var display = linklist.display();
+    var display = linklist.display();//display the elemets using linklist implementation
     console.log(display);
     util.writefile('nm.txt',display)
 } catch (err) { 
