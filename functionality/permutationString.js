@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node PermutationString.js
+ * Execution    :   1. cmd> node permutationString.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Permutation.js
+ *                  2. cmd> nodemon permutation.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   To get the distance of a point from the origin.
  * 
  * @description
  * 
- * @file        :   PermutationString.js
+ * @file        :   permutationString.js
  * @overview    :   Uses to find all the permutation of the given string
  * @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
  * @version     :   1.0

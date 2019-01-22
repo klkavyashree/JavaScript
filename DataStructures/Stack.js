@@ -39,6 +39,7 @@ function Stack()
        if(ch=='(' || ch=='[' || ch=='{')
        {
        stack.push(ch);
+       stack.peek();
 
        }
        else{
@@ -62,14 +63,14 @@ function Stack()
 
 
    }
-   if(stack.isEmpty){
+   if(stack.isEmpty()){
    return true;
    }
    return false;
 }
 var bol=Stack();
 
-
+console.log(bol);
 if(bol){
     console.log("String is balanced");
     

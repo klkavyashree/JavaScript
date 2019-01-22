@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node Quadratic.js
+ * Execution    :   1. cmd> node quadratic.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Quadratic.js
+ *                  2. cmd> nodemon quadratic.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   Find the roots of the Quadratic equation.
  * 
  * @description
  * 
- * @file        :   Quadratic.js
+ * @file        :   quadratic.js
  * @overview    :   Take A,B,C values of the equation Ax2+Bx+c=0 to get two root valkue of 'x'.
  * @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
  * @version     :   1.0

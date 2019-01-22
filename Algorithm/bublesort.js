@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node Bublesort.js
+ * Execution    :   1. cmd> node bublesort.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Bublesort.js
+ *                  2. cmd> nodemon bublesort.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   sort values using bubblesort algorithm.
  * 
  * @description
  * 
- * @file        :   Bublesort.js
+ * @file        :   bublesort.js
  * @overview    :   sorting of values in ascending order..
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>
  * @version     :   1.0

@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node AnagramNumber.js
+ * Execution    :   1. cmd> node anagramNumber.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon AnagramNumber.js
+ *                  2. cmd> nodemon anagramNumber.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   Checks if two Strings are Anagram or not.
  * 
  * @description
  * 
- * @file        :   AnagramNumber.js
+ * @file        :   anagramNumber.js
  * @overview    :   Checks two String if they are simply a rearrangement of each other.
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>
  * @version     :   1.0

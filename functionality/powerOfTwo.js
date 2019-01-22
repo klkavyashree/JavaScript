@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node LeapYear.js
+ * Execution    :   1. cmd> node powerOfTwo.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon LeapYear.js
+ *                  2. cmd> nodemon powerOfTwo.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Get to know whether the given year is Leap year or not.
+ * Purpose      :   Get the powers of 2 from 1 to required range.
  * 
  * @description
  * 
- * @file        :   LeapYear.js
- * @overview    :   Check for leap year Using constraints.
+ * @file        :   powerOfTwo.js
+ * @overview    :   Iterate from 1 to range mean while print the power of it.
  * @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
  * @version     :   1.0
  * @since       :   12-01-2019
@@ -20,8 +20,9 @@
  * 'readline'helps to have conversation with the user via a console,
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */
-var util= require('../UtilPrgms/Utility');
+var util=require('../UtilPrgms/Utility'); // importing from utilty function
 
-var read=require('readline-sync');//scan for input
-var year=read.questionInt("enter year should be of 4 digits");//getting user input
-console.log(util.isLeapYear(year));//calling Leapyear function from utility file
+var read=require('readline-sync'); // scan input
+var n=read.questionInt("enter n value to find power of 2");
+util.powerOf2(n);
+

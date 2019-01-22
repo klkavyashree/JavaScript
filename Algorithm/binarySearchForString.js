@@ -1,18 +1,18 @@
 /************************************************************
- * Execution    :   1. cmd> node BinaryNumber.js
+ * Execution    :   1. cmd> node binarySearchforStrings.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon BinaryNumber.js
+ *                  2. cmd> nodemon binarySearchforStrings.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   search for the value usingbinary search method
  * 
  * @description
  * 
- * @file        :   BinaryNumber.js
+ * @file        :   binarySearchforStringst.js
  * @overview    :   search for the binary value.
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>
  * @version     :   1.0
- * @since       :   15-01-2019
+ * @since       :   16-01-2019
  * 
  * **********************************************************/        
 
@@ -24,14 +24,13 @@ const util=require('../UtilPrgms/Utility');
 
 const read=require('readline-sync');
 var arrayLength=read.questionInt("enter the arraylength ");
-var binaryArray=[];
+var binaryarray=[];
 for(let index=0;index<arrayLength;index++)
 {   
-var value=read.questionInt("enter the array value ");
-binaryArray.push(value);
+var value=read.question("enter the array value ");
+binaryarray.push(value);
 }
-var binaryArray=util.bubblesort(binaryArray);
-var key=read.questionInt("enter the value to be check")
-
-var ans=util.binarySearch(binaryArray,key);
+console.log(binaryarray);
+var key=read.question("enter the string to be check")
+var ans=util.binaryString(binaryarray,key);
 console.log(ans);

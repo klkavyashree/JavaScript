@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node Payment.js
+ * Execution    :   1. cmd> node payment.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Payment.js
+ *                  2. cmd> nodemon payment.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   to find the monthly-payment and prints the results 
  * 
  * @description
  * 
- * @file        :   Payment.js
+ * @file        :   payment.js
  * @overview    :   take command line input of principle and year and rate 
     *and find the monthly payment 
  * @author      :   kavyashree k l <kavya.kavyashree97@gmail.com>

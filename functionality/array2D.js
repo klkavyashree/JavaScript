@@ -1,5 +1,5 @@
 /************************************************************
- * Execution    :   1. cmd> node Array2D.js
+ * Execution    :   1. cmd> node array2D.js
  *                   if nodemon is installed:
  *                  2. cmd> nodemon array2D.js
  *                   nodemon helps in restart the program after every changes.
@@ -8,7 +8,7 @@
  * 
  * @description
  * 
- * @file        :   Array2D.js
+ * @file        :   array2D.js
  * @overview    :   Use arrays to store and retrieve the values in order.
  * @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
  * @version     :   1.0

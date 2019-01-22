@@ -240,7 +240,7 @@ module.exports = {
      */
     print2DArray(row, column) {
         var arr1 = [];      //initialising array
-        console.log("enter the elements of the array");
+       // console.log("enter the elements of the array");
         for (let index1 = 0; index1 < row; index1++) {
             arr1.push([]);
             for (let index2 = 0; index2 < column; index2++) {  //looping over till reach column value 
@@ -255,15 +255,13 @@ module.exports = {
         for (let index = 0; index < arr.length; index++) {
             var array = [];           //initialising array       
             for (let index1 = 0; index1 < arr.length; index1++) {
-                p[index1] = arr[index][index1];           //passing value into two dimensional array
+                [index1] = arr[index][index1];           //passing value into two dimensional array
 
             }
             console.log(array);      //printing array
         }
 
     },
-
-
     /*
      * @purpose : find the distinct 3 values which gives sum equal to zero
      * @parm : user inputs
@@ -423,7 +421,10 @@ module.exports = {
      * 
      */
     findAnagram(string1, string2) {
-
+        num1="";
+        num2="";
+        string1=num1+string1;
+        string2=num2+string2;
         var array1 = string1.toLowerCase().split("").sort();
         // console.log(Array1);
         var array2 = string2.toLowerCase().split("").sort();
@@ -437,7 +438,14 @@ module.exports = {
         return true;
 
     },
-    isAnagram(string1, string2) {
+    /*
+     * @purpose : To find wheather the given 2 numbers are anagram or not
+     * @parm : user string inputs 
+     * @description : One string is an anagram of another if the second is 
+     * simply a rearrangement of the first.check weather the given numbers are anagram or not
+     * 
+     */
+    isAnagram(string1, string2) {       //to find weather 2 numbers are anagram are not
         string1 = string1 + "";
         string2 = string2 + "";
         if (string1.length != string2.length) {
@@ -699,14 +707,15 @@ module.exports = {
         *           year- take year from command line of user choice
         *@description : use formula and calculate the day 
         */
-    dayOfWeek(day, month, year) {
-        console.log("ghf")
+    dayOfWeek(day, month, year) 
+    {
+       
         var y0 = year - Math.floor((14 - month) / 12);
-        console.log("dddhg")
+       
         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-        console.log("giuuytthg")
+       
         var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
-        console.log("ghhghg")
+    
         var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
         console.log(d0);
         return d0;
