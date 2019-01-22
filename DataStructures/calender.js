@@ -25,7 +25,7 @@ var year=ref.questionInt('enter the year')
 
     for (var i = 1; i <= dates[month]; i++) {
         if (i < 10) {
-            take.print(" " + i + "   ");
+            take.print("" + i + "   ");
         }
 
         if (i > 9) {

@@ -13,7 +13,7 @@ for(let index=0;index<data.length;index++)
     console.log(d)
     rem=d%11;
     
-    hashArray[rem][col]=data;
+    hashArray[rem][col].lastIn;
     col++
 }
 for(let i=0;i<hashArray.length;i++)
