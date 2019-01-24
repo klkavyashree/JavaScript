@@ -51,6 +51,7 @@ class LinkedList {
                 temp = temp.next;
             }
             this.size++;//inc size
+            
             temp.next = node;//assighning node adress to the prev node
         }
     }
