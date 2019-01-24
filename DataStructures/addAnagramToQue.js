@@ -20,33 +20,28 @@
  */
 var util = require('../UtilPrgms/Utility')
 
-var dsUtil=require('../UtilPrgms/DSUtility')
-var arrPrime=[];
-var arrAnagram=[];
-for(let index=2;index<1000;index++)
-{
-    if(util.checkPrime(index))//check for prime numbers
+var dsUtil = require('../UtilPrgms/DSUtility')
+var arrPrime = [];
+var arrAnagram = [];
+for (let index = 2; index < 1000; index++) {
+    if (util.checkPrime(index))//check for prime numbers
     {
         arrPrime.push(index)//pushing value into the array
     }
 }
-for(let index=0;index<arrPrime.length;index++)
-{
-    for(let index1=index+1;index1<arrPrime.length;index1++)
-    {
-            if(util.isAnagram(arrPrime[index],arrPrime[index1]))
-            {
-              
-                arrAnagram.push(arrPrime[index1]);//pushing value into the anagramarray
-                arrAnagram.push(arrPrime[index]);//pushing value into the anagramarray
-                
-            }
+for (let index = 0; index < arrPrime.length; index++) {
+    for (let index1 = index + 1; index1 < arrPrime.length; index1++) {
+        if (util.isAnagram(arrPrime[index], arrPrime[index1])) {
+
+            arrAnagram.push(arrPrime[index1]);//pushing value into the anagramarray
+            arrAnagram.push(arrPrime[index]);//pushing value into the anagramarray
+
+        }
     }
-    
+
 }
 var que = new dsUtil.Queue;
-for(let index=0;index<arrAnagram.length;index++)
-{
+for (let index = 0; index < arrAnagram.length; index++) {
     que.push(arrAnagram[index]);//pushing value into the 
 }
 que.print();//printing values using que print

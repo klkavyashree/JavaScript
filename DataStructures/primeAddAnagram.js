@@ -26,15 +26,15 @@ var array = [['0-100'], ['100-200'], ['200-300'], ['300-400'], ['400-500'], ['50
 
 for (let i = 2; i < 1000; i++) {
     if (util.checkPrime(i)) {
-        arrPrime.push(i);
+        arrPrime.push(i);//pushing all the prime value into the arrPrime
     }
 }
 var i = 0, j = 1, range = 100;
 for (let index = 0; index < arrPrime.length; index++) {
     for (let index1 = index + 1; index1 < arrPrime.length; index1++) {
-        if (util.isAnagram(arrPrime[index],arrPrime[index1])) {
+        if (util.isAnagram(arrPrime[index], arrPrime[index1])) {//checking for the angram and prime value
             if (arrPrime[index] <= range) {
-                if (!array.includes(arrPrime[index]) && !array.includes(arrPrime[index1])){
+                if (!array.includes(arrPrime[index]) && !array.includes(arrPrime[index1])) {
                     array[i][j] = arrPrime[index];
                     j++;
                 }
@@ -44,7 +44,7 @@ for (let index = 0; index < arrPrime.length; index++) {
                 range = range + 100;
                 i++;
                 if (!array.includes(arrPrime[index]) && !array.includes(arrPrime[index1])) {
-                    array[i][j] = arrPrime[index];
+                    array[i][j] = arrPrime[index];//pushing the angram and prime value into the array
                 }
             }
         }
@@ -56,5 +56,5 @@ for (var i = 0; i < array.length; i++) {
     for (var j = 0; j < array[i].length; j++) {
         ref.print(array[i][j] + " ")
     }
-    console.log()
+    console.log()//printing into the console
 }

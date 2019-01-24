@@ -15,20 +15,28 @@
  * @version     :   1.0
  * @since       :   17-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- * */
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+* */
 var take = require('util');
-var ref=require('readline-sync')
+var ref = require('readline-sync')
 var util = require('../UtilPrgms/Utility');
-var dsUtil=require('../UtilPrgms/DSUtility')
+var dsUtil = require('../UtilPrgms/DSUtility')
 
 function calender() {
-    var month=ref.questionInt('enter the month');
-var year=ref.questionInt('enter the year')
-   
+    var month = ref.questionInt('enter the month');
+    while (month > 12 || month <= 0) {
+        console.log('enter month within 12 and greter than 0')
+        var month = ref.questionInt('enter the month');
+    }
+    var year = ref.questionInt('enter the year')
+    while (year < 0) {
+        console.log('enter year greater then 0')
+        var year = ref.questionInt('enter the month');
+    }
+
     var week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var dates = [0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31]
     var day = util.dayOfWeek(1, month, year);
@@ -65,6 +73,6 @@ var year=ref.questionInt('enter the year')
 calender();
 
 
-      
+
 
 

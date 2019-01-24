@@ -15,12 +15,12 @@
  * @version     :   1.0
  * @since       :   17-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
-var util = require('../UtilPrgms/DSUtility');
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
+var util = require('../UtilPrgms/queue');
 var read = require('readline-sync');
 
 function Queue() {
@@ -28,36 +28,36 @@ function Queue() {
     var totalbankcash = 100000;
     flag = true;
     var ask = read.question("Enter the total number of people ");
-    
-       if(ask>0){
+
+    if (ask > 0) {
         for (var i = 1; i <= ask; i++) {
             var ans = read.question("Press 1 to deposit the cash\npress 2 to withdraw the cash \n ");
             if (ans == 1) {//if the ans is 1 then ask user to enter amount he want to deposit
                 var amount = read.question("Enter total amount do you want to Deposit ");
                 que.push(Number(amount));
-                flag= true;
-               
+                flag = true;
+
             }
             else if (ans == 2) {//if the ans is 2 then ask user to enter amount he want to withdraw
                 var amount = read.question("Enter total amount do you want to Withdraw  ");
                 que.push(Number(-amount));
-                
-                flag= true;
-               
+
+                flag = true;
+
             }
             else {
                 console.log("Make sure that, you entered the correct key ");
-                flag= false;
+                flag = false;
                 return;
             }
         }
-        }
-        else{
-            console.log("Invalid input ");
-            return;
-        }
-    
-    
+    }
+    else {
+        console.log("Invalid input ");
+        return;
+    }
+
+
     if (flag) {
         var addition = 0;
         for (let i = 1; i <= ask; i++) {

@@ -14,42 +14,47 @@
  * @version     :   1.0
  * @since       :   17-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const read = require('readline-sync');
 /**
  * import the Utility class to use the functionalities of LinkedList.
  */
-var ll = require('../UtilPrgms/DSUtility');
+const ll = require('../UtilPrgms/DSUtility');
 /**
  * import the Utility class to use the functionaly of reading/writing a file.
  */
-var util = require('../UtilPrgms/Utility');
+var temp = [];
+const util = require('../UtilPrgms/Utility');
 try {
-    var linklist=new ll.LinkedList();//creating linklist object
-    var fileName=read.question("enter filename")
-    let datas = util.callfile(fileName);
-    var data=util.bubblesort(datas);//calling bubblesort function
-    console.log(datas)
-    for(let index=0;index<data.length;index++)
+    var linklist = new ll.LinkedList();//creating linklist object
+    var fileName = read.question("enter filename")
+    var datas = util.callfile(fileName);
+    for (let index = 0; index < datas.length; index++) {
+        temp.push(parseInt(datas[index]))
+    }
+    console.log(temp)
+    data = util.bubblesort(temp);//calling bubblesort function
+    console.log(data)
+    for (let index = 0; index < data.length; index++)
         linklist.add(data[index]);
     var display = linklist.display();
     console.log(display);
-    let name = read.question("Enter the name you want to search");
-    var check = linklist.search(name);//calling searching function
+    var num = read.question("Enter the data you want to search");
+    var check = linklist.search(num);//calling searching function
     console.log(check);
-    if(check){
-        linklist.remove(name);
-    }    
-    else{
-        linklist.addToPos(name);
+    if (check) {
+        linklist.remove(num);
+    }
+    else {
+        linklist.addToPos(num);
     }
     var display = linklist.display();//display the elemets using linklist implementation
     console.log(display);
-    util.writefile(fileName,display)//writting into the file
-} catch (err) { 
-  console.error(err);
+    util.writefile(fileName, display)//writting into the file
+} catch (err) {
+    console.error(err);
 }

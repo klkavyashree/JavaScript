@@ -25,7 +25,7 @@ for(let index=0;index<data.length;index++)
      hashArray[rem][col]=data[index];
 }
 console.log(hashArray)
-for(let index=0;index<10;index++)
+for(let index=0;index<=10;index++)
 {
     arr1[index]=new dsUtil.LinkedList;
 }
@@ -38,12 +38,12 @@ for(let index=0;index<hashArray.length;index++)
     }
 }
 var rema=num%11;
-if(arr1[rem].search(num))
+if(arr1[rema].search(num))
 {
-    arr1[rem].pop();
+    arr1[rema].pop();
 }
 else
 {
-    arr1[rem].push(num);
+    arr1[rema].push(num);
 }
 console.log(arr1)

@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node dequeue.js
+ * Execution    :   1. cmd> node checkPalindrome.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon dequeue.js
+ *                  2. cmd> nodemon checkPalindrome.js
  *                   nodemon helps in restart the program after every changes.
  * 
  * Purpose      :   To check if the given word is palindrome or not.
  * 
  * @description
  * 
- * @file        :   dequeue.js
+ * @file        :   checkPalindrome.js
  * @overview    :   Use rear and front to check from both ends if the word is palindrome or not.
  * @author      :   Kavyashree K L<kavya.kavyashree97@gmail.com>
  * @version     :   1.0
@@ -23,7 +23,7 @@ const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities of Deque.
  */
-var util = require('../UtilPrgms/DSUtility');
+var util = require('../UtilPrgms/deQueue');
 function check() {
     var deque = new util.Deque;//creating deque object
     var answer = readline.question("Enter the string  ");

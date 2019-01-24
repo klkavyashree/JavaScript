@@ -21,8 +21,8 @@
 var util = require('../UtilPrgms/DSUtility');
 function primes() {
     var primes = [];
-    var initial = 0;
-    var final = 100;
+    var initial = 0;//taking initial value as 0
+    var final = 100;//taking final value as 100
     /**
      * divide into 10 divisions with 100 as the interval
      */

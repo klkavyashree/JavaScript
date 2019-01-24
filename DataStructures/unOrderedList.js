@@ -15,11 +15,11 @@
  * @version     :   1.0
  * @since       :   17-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const read = require('readline-sync');
 /**
  * import the Utility class to use the functionalities of LinkedList.
@@ -30,25 +30,25 @@ var ll = require('../UtilPrgms/DSUtility');
  */
 var util = require('../UtilPrgms/Utility');
 try {
-    var linklist=new ll.LinkedList();//creating list object
-    var fileName=read.question("enter filename")
-    let data = util.callfile(fileName);
-    for(let index=0;index<data.length;index++)
+    var linklist = new ll.LinkedList();//creating list object
+
+    let data = util.callfile('nm.txt');
+    for (let index = 0; index < data.length; index++)
         linklist.add(data[index]);
-    var display = linklist.display();
-    console.log(display);
-    let name = read.question("Enter the name you want to search");
+    var display = linklist.display();//display all  the value using linklist display
+    console.log(display);//print all the values inthe linklist
+    let name = read.question("Enter the data you want to search");
     var check = linklist.search(name);
     console.log(check);
-    if(check){
-        linklist.remove(name);
-    }    
-    else{
+    if (check) {
+        linklist.remove(name);//rempove the element if it is already inthe file
+    }
+    else {
         linklist.add(name);
     }
     var display = linklist.display();//display the elemets using linklist implementation
     console.log(display);
-    util.writefile('nm.txt',display)
-} catch (err) { 
-  console.error(err);
+    util.writefile('nm.txt', display)//
+} catch (err) {
+    console.error(err);
 }
