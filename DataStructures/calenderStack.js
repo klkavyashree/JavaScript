@@ -20,7 +20,7 @@
  * 'readline'helps to have conversation with the user via a console,
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */var take = require('util');
-var stack = require('../UtilPrgms/DSUtility');
+var stack = require('../UtilPrgms/stack');
 var Utility = require('../UtilPrgms/Utility');
 
 function calender() {

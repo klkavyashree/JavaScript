@@ -79,6 +79,19 @@ class Queue {
             t = t.next;
         }
     }
+    getData(){
+        var temp=this.front;
+        var str="";
+        while(temp){
+            str=str+temp.data;
+            if(temp.next!=null){
+                str=str+" ";
+            }
+            temp=temp.next;
+        }
+       // console.log(str)
+        return str;
+    }
 
     isEmpty() {//checking wheather the queue is is full or not
         if (this.size === 0) {

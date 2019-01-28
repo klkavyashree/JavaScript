@@ -132,25 +132,6 @@ module.exports = {
             return "n should be greater than 0";          //printing to the console if the value is not equal to zero
     },
 
-
-    /*
-     * @purpose : check weather the given input is prime number
-     * @param : take number from user to find prime or not
-         * @description : take input from the user as n value and check weather the i/p is prime or not
-         * @function: checking for all the values which are less than n 
-         * whether the given value will completely divide or not
-         */
-    checkPrime(num)           //check prime function
-    {
-        for (let index = 2; index <= num / 2; index++) {
-            if (num % index == 0)          //if n value is completely divide by integer number it is not prime
-            {
-                return false;
-            }
-        }
-        return true;                //the given number is prime
-    },
-
     /*
      * @purpose : to generate prime factors of the given value 
      * @param :num as user input 
@@ -240,7 +221,7 @@ module.exports = {
      */
     print2DArray(row, column) {
         var arr1 = [];      //initialising array
-       // console.log("enter the elements of the array");
+        // console.log("enter the elements of the array");
         for (let index1 = 0; index1 < row; index1++) {
             arr1.push([]);
             for (let index2 = 0; index2 < column; index2++) {  //looping over till reach column value 
@@ -414,6 +395,24 @@ module.exports = {
     },
 
     /*
+     * @purpose : check weather the given input is prime number
+     * @param : take number from user to find prime or not
+         * @description : take input from the user as n value and check weather the i/p is prime or not
+         * @function: checking for all the values which are less than n 
+         * whether the given value will completely divide or not
+         */
+    checkPrime(num)           //check prime function
+    {
+        for (let index = 2; index <= num / 2; index++) {
+            if (num % index == 0)          //if n value is completely divide by integer number it is not prime
+            {
+                return false;
+            }
+        }
+        return true;                //the given number is prime
+    },
+
+    /*
      * @purpose : To find wheather the given 2 strings is anagram or not
      * @parm : user string inputs 
      * @description : One string is an anagram of another if the second is 
@@ -421,10 +420,10 @@ module.exports = {
      * 
      */
     findAnagram(string1, string2) {
-        num1="";
-        num2="";
-        string1=num1+string1;
-        string2=num2+string2;
+        num1 = "";
+        num2 = "";
+        string1 = num1 + string1;
+        string2 = num2 + string2;
         var array1 = string1.toLowerCase().split("").sort();
         // console.log(Array1);
         var array2 = string2.toLowerCase().split("").sort();
@@ -657,7 +656,7 @@ module.exports = {
     findNumber(low, high, read) {
 
         var mid = (low + Math.floor((high - low) / 2));
-        console.log(mid);
+       // console.log(mid);
         if (low < high) {
             var c;
             if (low == high - 1) {
@@ -707,15 +706,14 @@ module.exports = {
         *           year- take year from command line of user choice
         *@description : use formula and calculate the day 
         */
-    dayOfWeek(day, month, year) 
-    {
-       
+    dayOfWeek(day, month, year) {
+
         var y0 = year - Math.floor((14 - month) / 12);
-       
+
         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-       
+
         var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
-    
+
         var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
         console.log(d0);
         return d0;
@@ -856,179 +854,179 @@ module.exports = {
 *@param   : res-array
 *@description : take array,divide into two halves,and sort the elements for both right and left halves 
 */
-mergeSort(res) {
-    var n = res.length;
-    //if size is less than 2 return that.
-    if (n < 2) {
-        return;
-    }
-    //cal mid value 
-    var mid = Math.floor(n / 2);
-    var left = [mid];
-    var right = [n - mid];
-   //store  elements in left array which are present before the mid   
-    for (let i = 0; i < mid; i++) {
-        left[i] = res[i];
-    }
-    //store  elements in left array which are present before the mid  
-    for (let j = mid; j < n; j++) {
-        right[j - mid] = res[j];
-    }
-    //call mergesort for left halve 
-    this.mergeSort(left);
-     //call mergesort for left halve 
-    this.mergeSort(right);
-    this.merge(left, right, res);
-
-},
-
-merge(arr, brr, crr) {
-    var i = 0; var j = 0;
-    var k = 0;
-    //merge elements into crr[]
-    while (i < arr.length && j < brr.length) {
-        if (arr[i] <= brr[j]) {
-            crr[k] = arr[i]
-            i++;
+    mergeSort(res) {
+        var n = res.length;
+        //if size is less than 2 return that.
+        if (n < 2) {
+            return;
         }
-        else {
+        //cal mid value 
+        var mid = Math.floor(n / 2);
+        var left = [mid];
+        var right = [n - mid];
+        //store  elements in left array which are present before the mid   
+        for (let i = 0; i < mid; i++) {
+            left[i] = res[i];
+        }
+        //store  elements in left array which are present before the mid  
+        for (let j = mid; j < n; j++) {
+            right[j - mid] = res[j];
+        }
+        //call mergesort for left halve 
+        this.mergeSort(left);
+        //call mergesort for left halve 
+        this.mergeSort(right);
+        this.merge(left, right, res);
+
+    },
+
+    merge(arr, brr, crr) {
+        var i = 0; var j = 0;
+        var k = 0;
+        //merge elements into crr[]
+        while (i < arr.length && j < brr.length) {
+            if (arr[i] <= brr[j]) {
+                crr[k] = arr[i]
+                i++;
+            }
+            else {
+                crr[k] = brr[j];
+                j++;
+            }
+            k++;
+        }
+        // if arr[] is greater than brr[], push all arr[] into crr[]
+        while (i < arr.length) {
+            crr[k] = arr[i];
+            i++;
+            k++;
+        }
+        // if arr[] is lesser than brr[], push all brr[] into crr[]
+        while (j < brr.length) {
             crr[k] = brr[j];
             j++;
+            k++;
         }
-        k++;
-    }
-    // if arr[] is greater than brr[], push all arr[] into crr[]
-    while (i < arr.length) {
-        crr[k] = arr[i];
-        i++;
-        k++;
-    }
-     // if arr[] is lesser than brr[], push all brr[] into crr[]
-    while (j < brr.length) {
-        crr[k] = brr[j];
-        j++;
-        k++;
-    }
-    return crr;
-},
-intializeGame() {
-    var game = [];
-    for (let i = 0; i <= 2; i++) {
-        game.push([]);
-        for (let j = 0; j <= 2; j++)
-            game[i][j] = '-';
-    }
-    return game;
-},
-/**
- * @description Generate random number between 0 to 2.
- * 
- * @returns 0,1,or2.
- */
-random() {
-    var value = Math.floor(Math.random() * 3);
-    console.log(value);
-    return value;
-},
-/**
- * @description To mark in the specified location.
- * 
- * @param {Array} game 
- * @param {number} x 
- * @param {number} y 
- * @param {Letter} value 
- * 
- * @returns Array with mark updated.
- */
-mark(game, x, y, value) {
-    if (game[x][y] == '-')
-        game[x][y] = value;
-    for (let i = 0; i <= 2; i++) {
-        var print = [];
-        for (let j = 0; j <= 2; j++)
-            print[j] = game[i][j];
-        console.log(print);
-    }
-    return game;
-}
-,
-/**
- * @description Computer uses random number to mark the play.
- * 
- * @param {Array} game 
- * 
- * @returns Array with mark updated.
- */
-computerPlayer(game) {
-    var arr;
-    var flag = false;
-    while (flag == false) {
-        var x = this.random();
-        var y = this.random();
-        if (game[x][y] == '-') {
-            arr = this.mark(game, x, y, 'O');
-            flag = true;
+        return crr;
+    },
+    intializeGame() {
+        var game = [];
+        for (let i = 0; i <= 2; i++) {
+            game.push([]);
+            for (let j = 0; j <= 2; j++)
+                game[i][j] = '-';
         }
-    }
-    return game;
-}
-,
-/**
-* @description Player choose number to mark the play.
-* 
-* @param {Array} game 
-* 
-* @returns Array with mark updated.
-*/
-userPlayer(game,readline) {
-    var flag = false;
-    while (flag == false) {
-        console.log("Enter the row value:");
-        let x = readline.questionInt('Enter the value of x within 0,1,2');
-        let y = readline.questionInt('Enter the value of y within 0,1,2');
-        if (game[x][y] == '-') {
-            this.mark(game, x, y, 'X');
-            flag = true;
+        return game;
+    },
+    /**
+     * @description Generate random number between 0 to 2.
+     * 
+     * @returns 0,1,or2.
+     */
+    random() {
+        var value = Math.floor(Math.random() * 3);
+        console.log(value);
+        return value;
+    },
+    /**
+     * @description To mark in the specified location.
+     * 
+     * @param {Array} game 
+     * @param {number} x 
+     * @param {number} y 
+     * @param {Letter} value 
+     * 
+     * @returns Array with mark updated.
+     */
+    mark(game, x, y, value) {
+        if (game[x][y] == '-')
+            game[x][y] = value;
+        for (let i = 0; i <= 2; i++) {
+            var print = [];
+            for (let j = 0; j <= 2; j++)
+                print[j] = game[i][j];
+            console.log(print);
         }
-        else
-            console.log("Please enter the correct choice");
+        return game;
     }
-    return game;
-}
-,
-/**
- * @description To check wheather any of the below pattern is matched to declare the winner.
- * 
- * @param {Array} game 
- * 
- * @returns boolean Yes->Any matches   N0->If no matches.
- */
-check(game) {
-    for (let i = 0; i <= 2; i++) {
-        if (game[i][0] == game[i][1] && game[i][1] == game[i][2]) {
-            if (game[i][0] == 'O' || game[i][0] == 'X') {
+    ,
+    /**
+     * @description Computer uses random number to mark the play.
+     * 
+     * @param {Array} game 
+     * 
+     * @returns Array with mark updated.
+     */
+    computerPlayer(game) {
+        var arr;
+        var flag = false;
+        while (flag == false) {
+            var x = this.random();
+            var y = this.random();
+            if (game[x][y] == '-') {
+                arr = this.mark(game, x, y, 'O');
+                flag = true;
+            }
+        }
+        return game;
+    }
+    ,
+    /**
+    * @description Player choose number to mark the play.
+    * 
+    * @param {Array} game 
+    * 
+    * @returns Array with mark updated.
+    */
+    userPlayer(game, readline) {
+        var flag = false;
+        while (flag == false) {
+            console.log("Enter the row value:");
+            let x = readline.questionInt('Enter the value of x within 0,1,2');
+            let y = readline.questionInt('Enter the value of y within 0,1,2');
+            if (game[x][y] == '-') {
+                this.mark(game, x, y, 'X');
+                flag = true;
+            }
+            else
+                console.log("Please enter the correct choice");
+        }
+        return game;
+    }
+    ,
+    /**
+     * @description To check wheather any of the below pattern is matched to declare the winner.
+     * 
+     * @param {Array} game 
+     * 
+     * @returns boolean Yes->Any matches   N0->If no matches.
+     */
+    check(game) {
+        for (let i = 0; i <= 2; i++) {
+            if (game[i][0] == game[i][1] && game[i][1] == game[i][2]) {
+                if (game[i][0] == 'O' || game[i][0] == 'X') {
+                    return true;
+                }
+            }
+            if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) {
+                if (game[0][i] == 'O' || game[0][i] == 'X') {
+                    return true;
+                }
+            }
+        }
+        var k = 0, l = 0;
+        if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) {
+            if (game[0][0] == 'O' || game[0][0] == 'X') {
                 return true;
             }
         }
-        if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) {
-            if (game[0][i] == 'O' || game[0][i] == 'X') {
+        if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) {
+            if (game[0][0] == 'O' || game[0][0] == 'X') {
                 return true;
             }
         }
-    }
-    var k = 0, l = 0;
-    if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) {
-        if (game[0][0] == 'O' || game[0][0] == 'X') {
-            return true;
-        }
-    }
-    if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) {
-        if (game[0][0] == 'O' || game[0][0] == 'X') {
-            return true;
-        }
-    }
-    return false;
-},
+        return false;
+    },
 
 
 

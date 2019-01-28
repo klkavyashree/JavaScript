@@ -1,0 +1,6 @@
+const read=require('readline-sync')
+const util=require('./OopsUtility/OopsUtil')
+const fileStream=require('fs')
+var acess = fileStream.readFileSync('clinicManage.json')
+object=JSON.parse(acess)
+util.clinicManagement(object)

@@ -21,6 +21,7 @@
 var util = require('../UtilPrgms/Utility')
 
 var dsUtil = require('../UtilPrgms/DSUtility')
+var que=require('../UtilPrgms/queue')
 var arrPrime = [];
 var arrAnagram = [];
 for (let index = 2; index < 1000; index++) {
@@ -40,7 +41,7 @@ for (let index = 0; index < arrPrime.length; index++) {
     }
 
 }
-var que = new dsUtil.Queue;
+var que = new que.Queue;
 for (let index = 0; index < arrAnagram.length; index++) {
     que.push(arrAnagram[index]);//pushing value into the 
 }

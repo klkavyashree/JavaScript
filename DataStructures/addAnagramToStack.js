@@ -20,8 +20,8 @@
  */
 var util = require('../UtilPrgms/Utility')
 var pr = require('util');
-var read = require('readline-sync')
-var dsUtil = require('../UtilPrgms/DSUtility')
+
+var stac=require('../UtilPrgms/stack')
 var arrPrime = [];
 var arrAnagram = [];
 for (let index = 2; index < 1000; index++) {
@@ -40,7 +40,7 @@ for (let index = 0; index < arrPrime.length; index++) {
     }
 
 }
-var stack = new dsUtil.Stack;
+var stack = new stac.Stack;
 for (let index = 0; index < arrAnagram.length; index++) {
     stack.push(arrAnagram[index]);//push nagram values into the stack
 }

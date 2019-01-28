@@ -22,7 +22,7 @@
 * */
 var take = require('util');
 const ref = require('readline-sync')
-var que = require('../UtilPrgms/DSUtility');
+var que = require('../UtilPrgms/queue');
 var Utility = require('../UtilPrgms/Utility');
 function calender() {
 

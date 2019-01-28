@@ -2,15 +2,14 @@ var arr = [["1:"], ["2:"]]
 
 data = [1, 2, 3, 4];
 
-for (let i = 0; i < data.length; i++) {
-    var j = 1;
-    var rem = data[i] % 2;
 
-    while (arr[rem][j] != undefined) {
-        j++
+    for(let i=0;i<data.length;i++)
+    {
+        for(let j=0;j<data.length;j++)
+        {
+            arr[[i][j]]=(data)
+        }
     }
-    arr[rem][j] = data[i];
-}
 console.log(arr)
 
 
