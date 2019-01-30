@@ -755,24 +755,24 @@ module.exports = {
             console.log('this company share is not exist')
             symbol = readline.question("enter the exist symbol")
         }
-        var price = readline.questionInt('enter the price')
-
-        for (let key in companyObject.shares) {
-            if (companyObject.shares[key].symbol == symbol) {
-                var numShare = Math.floor(price / (this.getPriceOfCompany(companyObject)[key]))
-            }
-        }
+       
         for (let key in companyObject.shares) {
             if (companyObject.shares[key].symbol == symbol) {
                 var share = this.getShareOfCompany(companyObject)[key]
-                companyObject.shares[key].shares = (share - numShare)
+                var shares = readline.questionInt('enter the shares required')
+                while(shares>share)
+                {
+                    console.log('the number of shares left in company are'+share)
+                    shares = readline.questionInt('enter the shares required that should be less than left out shares')
+                }
+                companyObject.shares[key].shares = (share - shares)
             }
         }
 
         customerObject.userAcc.push({
             "name": name,
             "symbol": symbol,
-            "share": numShare,
+            "share": shares,
             "price": price,
         })
 

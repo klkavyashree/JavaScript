@@ -4,13 +4,13 @@
             "name": "kavya",
             "symbol": "BridgeLabs",
             "shares": 25,
-            "price": 10000
+            "price": 100
         },
         {
             "name": "jk",
             "symbol": "BridgeLabs",
             "shares": 515,
-            "price": 2000
+            "price": 20
         },
         {
             "name": "manu",
@@ -22,7 +22,7 @@
             "name": "vbb",
             "symbol": "IBM",
             "shares": 20,
-            "price": 200
+            "price": 500
         },
         {
             "name": "swamy",
