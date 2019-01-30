@@ -840,7 +840,7 @@ module.exports = {
             }
             count++;
         }
-
+00
         console.log("the decimal val is" + sum)
         if (count1 == 1) {
             console.log("swapped number is even")

@@ -14,6 +14,6 @@
  * @version     :   1.0
  * @since       :   27-01-2019
  * 
- * **********************************************************/   
-const util=require('../Oops/OopsUtility/OopsUtil')
+ * **********************************************************/
+const util = require('../Oops/OopsUtility/OopsUtil')
 util.cardInOrder();//calling function from oopsutil

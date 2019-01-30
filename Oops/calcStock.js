@@ -14,15 +14,15 @@
  * @version     :   1.0
  * @since       :   25-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
-const fileStream=require('fs')//accesing filesystem
-const jsonFile=fileStream.readFileSync('stock.json')//acessing object json
-var object=JSON.parse(jsonFile)//parsing json object into JSobject
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
+const fileStream = require('fs')//accesing filesystem
+const jsonFile = fileStream.readFileSync('stock.json')//acessing object json
+var object = JSON.parse(jsonFile)//parsing json object into JSobject
 
-var acess=require('../Oops/OopsUtility/OopsUtil')//acessing file
+var acess = require('../Oops/OopsUtility/OopsUtil')//acessing file
 acess.calculateStock(object);

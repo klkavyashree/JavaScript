@@ -1,0 +1,34 @@
+{
+    "userAcc": [
+        {
+            "name": "kavya",
+            "symbol": "BridgeLabs",
+            "shares": 25,
+            "price": 10000
+        },
+        {
+            "name": "jk",
+            "symbol": "BridgeLabs",
+            "shares": 515,
+            "price": 2000
+        },
+        {
+            "name": "manu",
+            "symbol": "IBM",
+            "shares": 30,
+            "price": 200
+        },
+        {
+            "name": "vbb",
+            "symbol": "IBM",
+            "shares": 20,
+            "price": 200
+        },
+        {
+            "name": "swamy",
+            "symbol": "IBM",
+            "share": 1000,
+            "price": 200000
+        }
+    ]
+}

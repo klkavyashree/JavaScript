@@ -19,11 +19,6 @@
             "name": "tcs",
             "share": 54,
             "price": 15
-        },
-        {
-            "name": "kavya",
-            "share": 54,
-            "price": 45
         }
     ]
 }

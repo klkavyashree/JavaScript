@@ -1,1 +1,94 @@
-{"Doctor":[{"name":"Dr.bnm","Id":"al123","specialisation":"cardiologist","availability":"AM"},{"name":"Dr.narayan panji","Id":"al14ec44","specialisation":"nerologist","availability":"Both"},{"name":"Dr.Kanchana","Id":"D203","specialisation":"Ophthalmologist ","availability":"Both"},{"name":"Dr.Prasad gudde","Id":"D303","specialisation":"dynacologist","availability":"P"}],"Patient":[{"name":"kjk","Id":"hj77","phoneNumber":78745454554,"age":45,"appointmentFrom":"Dr.bnm","onTheDayOf":28},{"name":"asd","Id":"bn557","phoneNumber":7020111245,"age":25,"appointmentFrom":"Dr.narayan panji","onTheDayOf":28},{"name":"Sandeep","Id":"P002","phoneNumber":"8899662277","age":47,"appointmentFrom":"Dr.Kanchana","onTheDayOf":28},{"name":"kavyashree","Id":49310,"phoneNumber":7026154214,"age":21,"appointmentFrom":"Dr.Kanchana","onTheDayOf":28},{"name":"aish","Id":27776,"phoneNumber":15287548,"age":29,"appointmentFrom":"Dr.Prasad gudde","onTheDayOf":28},{"name":"karan","Id":87734,"phoneNumber":545,"age":52,"appointmentFrom":"Dr.Prasad gudde","onTheDayOf":28},{"name":"jh","Id":87082,"phoneNumber":15454554,"age":45,"appointmentFrom":"Dr.Kanchana","onTheDayOf":29}]}
+{
+    "Doctor": [
+        {
+            "name": "Dr.bnm",
+            "Id": "al123",
+            "specialisation": "cardiologist",
+            "availability": "AM"
+        },
+        {
+            "name": "Dr.narayan panji",
+            "Id": "al14ec44",
+            "specialisation": "nerologist",
+            "availability": "Both"
+        },
+        {
+            "name": "Dr.Kanchana",
+            "Id": "D203",
+            "specialisation": "Ophthalmologist ",
+            "availability": "Both"
+        },
+        {
+            "name": "Dr.Prasad gudde",
+            "Id": "D303",
+            "specialisation": "dynacologist",
+            "availability": "P"
+        }
+    ],
+    "Patient": [
+        {
+            "name": "kjk",
+            "Id": "hj77",
+            "phoneNumber": 78745454554,
+            "age": 45,
+            "appointmentFrom": "Dr.bnm",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "asd",
+            "Id": "bn557",
+            "phoneNumber": 7020111245,
+            "age": 25,
+            "appointmentFrom": "Dr.narayan panji",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "Sandeep",
+            "Id": "P002",
+            "phoneNumber": "8899662277",
+            "age": 47,
+            "appointmentFrom": "Dr.Kanchana",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "kavyashree",
+            "Id": 49310,
+            "phoneNumber": 7026154214,
+            "age": 21,
+            "appointmentFrom": "Dr.Kanchana",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "aish",
+            "Id": 27776,
+            "phoneNumber": 15287548,
+            "age": 29,
+            "appointmentFrom": "Dr.Prasad gudde",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "karan",
+            "Id": 87734,
+            "phoneNumber": 545,
+            "age": 52,
+            "appointmentFrom": "Dr.Prasad gudde",
+            "onTheDayOf": 28
+        },
+        {
+            "name": "jh",
+            "Id": 87082,
+            "phoneNumber": 15454554,
+            "age": 45,
+            "appointmentFrom": "Dr.Kanchana",
+            "onTheDayOf": 29
+        },
+        {
+            "name": "kavya",
+            "Id": 82300,
+            "phoneNumber": 1.1111111111233333e+38,
+            "age": 21,
+            "appointmentFrom": "Dr.Kanchana",
+            "onTheDayOf": 30
+        }
+    ]
+}

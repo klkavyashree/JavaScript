@@ -1,8 +1,34 @@
+/************************************************************
+* 
+* Purpose      :   To have all the functionalities of oops Programs.
+* 
+* @description
+* 
+* @file        :   OopsUtil.js
+* @overview    :   Export the functionalities to developers for reuseability,
+*                  simplification of coding.
+* @author      :   Kavyashree K L <kavya.kavyashree97@gmail.com>
+* @version     :   1.0
+* @since       :   24-01-2019
+* 
+* **********************************************************/
+
+/*
+  *@purpose : To get user input value 
+  *@description : we can call this method whenever we want take input from user
+                  and can return the string by replacing username.
+  */
+
+
 var readline = require('readline-sync')
 var fileStream = require('fs')
 
 
 module.exports = {
+    /** 
+    *@description:to calculate the price of the items in the list 
+    *@param:taking parsed object from the main function it includes all the description of the items
+    */
     inventory(object) {
         var rice = object.rice;//taking reference of the object
         var wheat = object.wheat;//taking reference of the object
@@ -16,7 +42,6 @@ module.exports = {
 
         for (let key in wheat) {//looping over each element that is in the wheat
             console.log('\n');
-
             console.log("The total rate of ", wheat[key].name, " is ", wheat[key].weight * wheat[key].rate);
             //printing total amount
         }
@@ -26,14 +51,21 @@ module.exports = {
             console.log("the total rate of ", pulses[key].name, " is ", pulses[key].weight * pulses[key].rate);
         } //printing total amount
     },
-
-    replaceUsingRegex(name, fullName, totalCountum, date, fileString) {
-        fileString = fileString.replace(/<<name>>/g, totalCountame)//replace method will replace the 1st value with 2nd sec value
-        fileString = fileString.replace(/<<fulltotalCountame>>/g, fullName)//g reads global it will change all occurances in that file
-        fileString = fileString.replace(/91-xxxxxxxxxx/g, totalCountum)
+    /** 
+   *@description:to replace the patterns in the file using reg expression 
+   *@param:taking user input to replace the required values
+   */
+    replaceUsingRegex(name, fullName, num, date, fileString) {
+        fileString = fileString.replace(/<<name>>/g, name)//replace method will replace the 1st value with 2nd sec value
+        fileString = fileString.replace(/<<full name>>/g, fullName)//g reads global it will change all occurances in that file
+        fileString = fileString.replace(/91-xxxxxxxxxx/g, num)
         fileString = fileString.replace(/01-01-2016/g, date);//get the date from user
         return fileString
     },
+    /** 
+    *@description:to calculate the price of the items in the list 
+    *@param:taking parsed object from the main function it includes all the description of the items
+    */
     calculateStock(object) {
         var stock = object.Stock;//creating object
         var sum = 0;
@@ -45,20 +77,26 @@ module.exports = {
         }
         console.log("total stock value is " + sum)//printing the total value
     },
-
-    getNameOfStock(object) {//it will give all thetotalCountames of stock in array
+    /** 
+    *@description:to take all the names in the object into the array  
+    *@param:taking parsed object from the user
+    */
+    getNameOfStock(object) {//it will give all the names of stock in array
         var nameArray = []
         var stock = object.Stock
         for (let key in stock) {//looping over each element
             nameArray.push(stock[key].name)
         }
-        return nameArray;//returnin array
+        return nameArray;//return  array
     },
 
-
+    /** 
+    *@description:to add the item into the object that is already exist 
+     *@param:taking parsed object from the main function it includes all the share details
+    */
     addData(object) {//to add datas into the array of Stock
         var name = readline.question('enter the stock name')//taking i/p from the user
-        while (this.getNameOfStock(object).includes(name)) {//if array doesnot have stock in thattotalCountame it will add into the arry
+        while (this.getNameOfStock(object).includes(name)) {//if array doesnot have stock in that name it will add into the arry
             console.log('the name is already exist')
             name = readline.question('enter the different stock name')
         }
@@ -72,10 +110,14 @@ module.exports = {
         fileStream.writeFileSync('stock.json', JSON.stringify(object));
         return;
     },
+    /** 
+    *@description:to delete the data from the object that is already exist 
+    *@param:taking parsed object from the main function it includes all the shares details
+     */
     deleteData(object) {//to delete the stock which is given by user
         console.log('The elements are ' + this.getNameOfStock(object))
         var ans = readline.question('enter the element name u want to search')
-        while (!this.getNameOfStock(object).includes(ans)) {//if the array includes the user giventotalCountame ony that time it will remove 
+        while (!this.getNameOfStock(object).includes(ans)) {//if the array includes the user given name only that time it will remove 
             console.log('enter the validtotalCountame')
             ans = readline.question('enter the element name u want to search')
         }
@@ -88,12 +130,17 @@ module.exports = {
         console.log('deleted successfully')
         return;
     },
+    /** 
+    *@description:to display data that is already exist in the json file 
+    *@param:taking parsed object from the main function it includes all the shares details
+     */
     displayData(object) {//displaying data that includes inthe object
         console.log(object);
         return;
     },
-
-
+    /** 
+    *@description:to display the cards in 2d array by arranging them in random manner
+    */
     arrangeIn2D() {
         var suit = ["♣️", "🔸", "❤️", "♠️"];
         var rank = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
@@ -123,6 +170,9 @@ module.exports = {
         console.log(playersArray)
 
     },
+    /** 
+    *@description:to display the cards in ordered manner by using que and insertion sort
+    */
     cardInOrder() {
         var util = require('../../UtilPrgms/queue')
         var utillity = require('../../UtilPrgms/Utility')
@@ -137,7 +187,7 @@ module.exports = {
 
         for (let index = 0; index < suit.length; index++) {
             for (let index1 = 0; index1 < rank.length; index1++) {
-                deck.push(suit[index] + "" + rank[index1]);//pushing all the elmets into the deck array
+                deck.push(rank[index1] + "" + suit[index]);//pushing all the elmets into the deck array
 
             }
         }
@@ -177,6 +227,11 @@ module.exports = {
         console.log("the cards that 3rd player is having is" + array3.join())
         console.log("the cards that 4th player is having is" + array4.join())
     },
+
+    /** 
+    *@description:to take all the names in the object into the array  
+    *@param:taking parsed object from the user
+    */
     getNameFromBook(object) {//it will give all thetotalCountames of stock in array
         var nameArray = []
         var data = object.detail
@@ -185,7 +240,10 @@ module.exports = {
         }
         return nameArray;//returnin array
     },
-
+    /** 
+    *@description:to take all the phone number in the object into the array  
+    *@param:taking parsed object from the user
+    */
     getPhoneNumber(object) {//it will give all thetotalCountames of stock in array
         var numArray = []
         var data = object.detail
@@ -194,17 +252,41 @@ module.exports = {
         }
         return numArray;//returnin array
     },
+    /** 
+    *@description:to add all the details of the  person into the object and adding it into the json file  
+    *@param:taking parsed object from the user
+    */
     addToAddressBook(object) {
         var data = object.detail;
         var name = readline.question('enter the name')//taking i/p from the user
+        while (!isNaN(name)) {
+            console.log("enter valid name with initial letter as string")
+            name = readline.question('enter the name')
+        }
         var fullName = readline.question('enter the fullname')
+        while (!isNaN(name)) {
+            console.log("enter valid name with initial letter as string")
+            name = readline.question('enter the fullname')
+        }
         var city = readline.question('enter the city')
+        while (!isNaN(name)) {
+            console.log("enter valid name with initial letter as string")
+            name = readline.question('enter the city')
+        }
         var state = readline.question('enter the state')
+        while (!isNaN(name)) {
+            console.log("enter valid name with initial letter as string")
+            name = readline.question('enter the state')
+        }
         var zipCode = readline.questionInt('enter the zipcode')
+        while (zipCode < 100000 || zipCode > 1000000) {
+            console.log('zipcode should be of 6 digit')
+            zipCode = readline.questionInt('enter the zipcode')
+        }
         var phoneNumber = readline.questionInt('enter the phone number')
-        while (this.getPhoneNumber(object).includes(phoneNumber)) {//if array doesnot have stock in thattotalCountame it will add into the arry
-            console.log('the name is already exist')
-            phoneNumber = readline.question('enter the different phone number')
+        while (this.getPhoneNumber(object).includes(phoneNumber) || phoneNumber > 9999999999 || phoneNumber < 999999999) {//if array doesnot have stock in that name it will add into the arry
+            console.log('the number is already exist or it should be of 10 digits')
+            phoneNumber = readline.questionInt('enter the different phone number')
         }
         data.push({//adding into stock object
             "name": name,
@@ -218,9 +300,13 @@ module.exports = {
         console.log('added successfully')
         return;
     },
+    /** 
+   *@description:to remove the details of the  person from the object and updating it into the json file  
+   *@param:taking parsed object from the user
+   */
     removeFromBook(object) {//to delete the stock which is given by user
         console.log('The elements are ' + this.getNameFromBook(object))
-        var ans = readline.question('enter the element name u want to search')
+        var ans = readline.question('enter the element name u want to remove')
         while (!this.getNameFromBook(object).includes(ans)) {//if the array includes the user giventotalCountame ony that time it will remove 
             console.log('enter the valid name')
             ans = readline.question('enter the element name u want to search')
@@ -239,6 +325,10 @@ module.exports = {
         console.log(object)
         return;
     },
+    /** 
+    *@description:to edit the details of the  person from the object and updating it into the json file  
+    *@param:taking parsed object from the user
+    */
     updateBook(object) {//to edit teh details in that book
         var data = object.detail;
         input = 0;
@@ -304,8 +394,8 @@ module.exports = {
                     break;
 
                 case 6: var phoneNumber = readline.question('enter phonenumber')//editting phoneNumber
-                    while (this.getPhoneNumber(object).includes(phoneNumber)) {//if array doesnot have stock in thattotalCountame it will add into the arry
-                        console.log('the name is already exist')
+                    while (this.getPhoneNumber(object).includes(phoneNumber) || phoneNumber > 9999999999 || phoneNumber < 999999999) {//if array doesnot have stock in thattotalCountame it will add into the arry
+                        console.log('the name is already exist or it should be of 10 digit')
                         phoneNumber = readline.question('enter the different phone number')
                     }
                     for (let index = 0; index < data.length; index++) {
@@ -320,13 +410,15 @@ module.exports = {
             if (input == 7) {
                 break;
             }
-            else {
-                console.log('enter valid input')
-            }
+
 
         }
         return;
     },
+    /** 
+    *@description:to sort the details of the  person from the object based on name and writtingting it into the json file  
+    *@param:taking parsed object from the user
+    */
     sortOnName(object) {//sorting based on names
         let data = object.detail
         function sortByName(a, b) {
@@ -340,6 +432,10 @@ module.exports = {
         data = data.sort(sortByName)
         this.displayAddressBook(object)
     },
+    /** 
+    *@description:to sort the details of the  person from the object based on zipcode and writting it into the json file  
+    *@param:taking parsed object from the user
+    */
     sortOnZipCode(object) {//sorting based on zipcode
         let data = object.detail
         function sortByName(a, b) {
@@ -349,18 +445,23 @@ module.exports = {
         this.displayAddressBook(object)//displaying the values
 
     },
-
-
-
+    /** 
+   *@description:to take all the names in the object into the array  
+   *@param:taking parsed object from the user
+   */
     getNameFromDoctor(object) {//it will give all thetotalCountames of stock in array
         var nameArray = []
         var data = object.Doctor
         for (let key in data) {//looping over each element
             nameArray.push(data[key].name)
         }
-        return nameArray;//returnin array
+        return nameArray;//return array
     },
-    getIdFromDoctor(object) {//it will give all thetotalCountames of stock in array
+    /** 
+   *@description:to take all the id in the object into the array  
+   *@param:taking parsed object from the user
+   */
+    getIdFromDoctor(object) {//it will give all the names of stock in array
         var nameArray = []
         var data = object.Doctor
         for (let key in data) {//looping over each element
@@ -392,6 +493,10 @@ module.exports = {
         }
         return nameArray;//returnin array
     },
+    /** 
+    *@description:to take all the phone numbers in the object into the array  
+    *@param:taking parsed object from the user
+    */
     getPhoneNumberFromPatient(object) {//it will give all specialisation in array
         var nameArray = []
         var data = object.Patient
@@ -400,8 +505,12 @@ module.exports = {
         }
         return nameArray;//returnin array
     },
+    /** 
+   *@description:to take all the deatails of thedoctore and patients and maintaining the appointment of the doctors 
+   *@param:taking parsed object from the user
+   */
     clinicManagement(object) {
-        
+
         var doctor = object.Doctor;
         var patient = object.Patient
         var count = patient.length;
@@ -461,6 +570,9 @@ module.exports = {
                 console.log('enter valid input')
             }
         }
+        /** 
+         * @description:if the input is 2 then search for the patients that are in the hospital
+        */
         else if (ans == 2) {
             console.log('enter the 1 to search patient by his name')
             console.log('enter 2 to search patient by his id')
@@ -513,9 +625,12 @@ module.exports = {
                 console.log('enter valid input')
             }
         }
+        /** 
+         * @description:if the input is 3 then take the appointment from the doctor and give timing to the patients
+        */
         else if (ans == 3) {
             count++;
-            
+
             var date = new Date();
             if (count > 5) {
                 var rem = Math.floor(count / 5)
@@ -529,6 +644,10 @@ module.exports = {
             var age = readline.questionInt("enter the age of the patient")
             var Id = Math.floor(Math.random() * 100000)
             var phoneNumber = readline.questionInt('enter the phoneNumber')
+            while (phoneNumber > 9999999999 || phoneNumber < 999999999) {
+                console.log("number should be of 10 digit")
+                phoneNumber = readline.questionInt('enter different phone number')
+            }
             console.log("doctors that are present are")
             console.log(this.getNameFromDoctor(object))
             var appointmentFrom = readline.question('enter the doctor name from u want to take appointment')
@@ -545,7 +664,186 @@ module.exports = {
             console.log("your appointment is confirmed on " + day)
 
         }
+        else
+            console.log('enter valid input')
 
+    },
+    /** 
+    *@description:to take all the symbol in the object into the array  
+    *@param:taking parsed object from the user
+    */
+    getSymbolCompany(object) {
+        var symbolArray = []
+        var data = object.shares
+        for (let key in data) {
+            symbolArray.push(data[key].symbol)
+        }
+        return symbolArray;
+    },
+    /** 
+    *@description:to take all the name of the customer in the object into the array  
+    *@param:taking parsed object from the user
+    */
+    getNameOfCustomer(object) {
+        var nameArray = []
+        var data = object.userAcc
+        for (let key in data) {
+            nameArray.push(data[key].name)
+        }
+        return nameArray;
+    },
+    getPriceOfCompany(object) {
+        var priceArray = []
+        var data = object.shares
+        for (let key in data) {
+            priceArray.push(data[key].price)
+        }
+        return priceArray;
+    },
+    getShareOfCompany(object) {
+        var shareArray = []
+        var data = object.shares
+        for (let key in data) {
+            shareArray.push(data[key].shares)
+        }
+        console.log(shareArray)
+        return shareArray;
+    },
+    /** 
+    *@description:to take all the shares of the customer in the object into the array  
+    *@param:taking parsed object from the user
+    */
+    getShareOfCustomer(object) {
+        var shareArray = []
+        var data = object.userAcc
+        for (let key in data) {
+            shareArray.push(data[key].shares)
+        }
+        return shareArray;
+    },
+
+    addToCompanyStock(companyObject) {
+        var date = new Date()
+        var symbol = readline.question("enter the symbol")
+        while (this.getSymbolCompany(companyObject).includes(symbol)) {
+            console.log('this company share is already exist')
+            symbol = readline.question("enter the different symbol")
+        }
+        var shares = readline.questionInt('enter the total number of shares in company')
+        var price = readline.questionInt('enter the price for each share')
+        var dateTimeOfTransaction = date;
+        companyObject.shares.push({
+            "symbol": symbol,
+            "shares": shares,
+            "price": price,
+            "dateTimeOfTransaction": dateTimeOfTransaction
+        })
+        fileStream.writeFileSync('companyStock.json', JSON.stringify(companyObject))
+    },
+    /** 
+    *@description:to add all the details of the  person into the object and adding it into the json file  
+    *@param:taking parsed object from the user
+    */
+    addToCustomerStock(customerObject, companyObject) {
+        var name = readline.question('enter the name')
+        while (this.getNameOfCustomer(customerObject).includes(name)) {
+            console.log("this customer is already exist")
+            name = readline.question('enter the name of the customer ')
+        }
+        var symbol = readline.question('enter the symbol')
+        while (!this.getSymbolCompany(companyObject).includes(symbol)) {//validating for symbol
+            console.log('this company share is not exist')
+            symbol = readline.question("enter the exist symbol")
+        }
+        var price = readline.questionInt('enter the price')
+
+        for (let key in companyObject.shares) {
+            if (companyObject.shares[key].symbol == symbol) {
+                var numShare = Math.floor(price / (this.getPriceOfCompany(companyObject)[key]))
+            }
+        }
+        for (let key in companyObject.shares) {
+            if (companyObject.shares[key].symbol == symbol) {
+                var share = this.getShareOfCompany(companyObject)[key]
+                companyObject.shares[key].shares = (share - numShare)
+            }
+        }
+
+        customerObject.userAcc.push({
+            "name": name,
+            "symbol": symbol,
+            "share": numShare,
+            "price": price,
+        })
+
+        fileStream.writeFileSync('customerStock.json', JSON.stringify(customerObject))//writting into the JSONfile
+        fileStream.writeFileSync('companyStock.json', JSON.stringify(companyObject))
+    },
+    /** 
+    *@description:to remove all the details of the  person in the object and adding it into the json file  
+    *@param:taking parsed object from the user
+    */
+    removeCompany(companyObject) {
+        var symbol = readline.question("enter the symbol of the company")
+        for (let key in companyObject.shares) {
+            if (this.getSymbolCompany(companyObject)[key] == symbol) {
+                companyObject.shares.splice(key, 1)
+            }
+        }
+        fileStream.writeFileSync('companyStock.json', JSON.stringify(companyObject))
+    },
+    /** 
+    *@description:person can sell the shares to the company  
+    *@param:taking parsed object from the user
+    */
+    sellShare(companyObject, customerObject) {
+        console.log('customer names that are in the list are ')
+        console.log(this.getNameOfCustomer(customerObject))
+        var name = readline.question('enter the name of the customer who is selling share')
+        while (!this.getNameOfCustomer(customerObject).includes(name)) {
+            console.log("enter the name valid customer name that are exist")
+            name = readline.question('enter the name of the customer who is selling share')
+        }
+        console.log('symbols of the company are ' + this.getSymbolCompany(companyObject))
+        var symbol = readline.question('enter the symbol of company fr whom u have to sell')
+        while (!this.getSymbolCompany(companyObject).includes(symbol)) {
+            console.log("enter the name valid symbol that are exist")
+            symbol = readline.question('enter the symbol of company fr whom u have to sell')
+        }
+        var shares = readline.questionInt('enter the number of share u want to sell')
+        {
+            for (let key in companyObject.shares) {
+                if (this.getSymbolCompany(companyObject)[key] == symbol) {
+                    var share = this.getShareOfCompany(companyObject)[key]
+                    companyObject.shares[key].shares = (share + shares)
+                }
+            }
+            for (let key in customerObject.userAcc) {
+                if (this.getNameOfCustomer(customerObject)[key] == name) {
+                    var share = this.getShareOfCustomer(customerObject)[key]
+                    customerObject.userAcc[key].shares = (share - shares)
+                }
+            }
+
+        }
+        fileStream.writeFileSync('customerStock.json', JSON.stringify(customerObject))
+        fileStream.writeFileSync('companyStock.json', JSON.stringify(companyObject))
+        this.showDetailsOfCompany(companyObject)
+        this.showDetailsOfCustomer(customerObject)
+    },
+    /** 
+    *@description:to show all the details of the company  
+    *@param:taking parsed object from the user
+    */
+    showDetailsOfCompany(companyObject) {
+        console.log(companyObject)
+    },
+    /** 
+    *@description:to show all the details of the customer  
+    *@param:taking parsed object from the user
+    */
+    showDetailsOfCustomer(customerObject) {
+        console.log(customerObject)
     }
 
 }

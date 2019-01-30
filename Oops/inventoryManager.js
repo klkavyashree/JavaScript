@@ -21,12 +21,12 @@
 * '-sync' helps readline to sync even when the input/output stream is redirected.
 */
 const fileStream = require('fs')
-var acess = fileStream.readFileSync('stock.json')
-var object = JSON.parse(acess)
+var acess = fileStream.readFileSync('stock.json', 'utf8')
+var object = JSON.parse(acess)//parsing the string into object
 
 var util = require('../Oops/OopsUtility/OopsUtil')
 var ans = 0;
-while (ans < 5) {
+while (ans < 5) {//if the input less than 5 it will enter the for loop
     console.log('press 1 to add stock')
     console.log('press 2 to delete stock')
     console.log('press 3 to print stock')
@@ -40,16 +40,15 @@ while (ans < 5) {
     switch (ans) {
         case 1: util.addData(object)
             break;
-        case 2:util.deleteData(object)
+        case 2: util.deleteData(object)
             break;
-        case 3:util.displayData(object)
+        case 3: util.displayData(object)
             break;
     }
     if (ans == 4) {
         break;
     }
-    else
-    {
+    else {
         console.log('enter valid input')
     }
 

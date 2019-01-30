@@ -1,0 +1,16 @@
+{
+    "shares": [
+        {
+            "symbol": "BridgeLabs",
+            "shares": 50,
+            "price": 1000,
+            "dateTimeOfTransaction": 28
+        },
+        {
+            "symbol": "IBM",
+            "shares": 105,
+            "price": 200,
+            "dateTimeOfTransaction": "2019-01-30T04:25:15.507Z"
+        }
+    ]
+}
